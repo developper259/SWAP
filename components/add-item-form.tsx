@@ -90,36 +90,38 @@ export default function AddItemForm({ onStepChange }: AddItemFormProps) {
   return (
     <div className="max-w-2xl mx-auto">
       {/* Step Indicator */}
-      <div className="mb-12">
-        <div className="flex justify-between items-center mb-2">
+      <div className="mb-12 relative">
+        {/* Progress Line */}
+        <div className="absolute top-7 h-1 bg-secondary rounded-full" style={{ left: 'calc(16.67% - 28px)', right: 'calc(16.67% - 28px)' }}>
+          <div
+            className="h-1 bg-primary rounded-full transition-all duration-300"
+            style={{
+              width: `${((currentStep - 1) / (steps.length - 1)) * 100}%`,
+            }}
+          />
+        </div>
+        <div className="grid grid-cols-3 gap-8 relative">
           {steps.map((step, idx) => (
-            <div key={step.number} className="flex items-center flex-1">
+            <div key={step.number} className="flex flex-col items-center">
+              {/* Circle */}
               <div
-                className={`w-10 h-10 rounded-full flex items-center justify-center font-semibold transition-colors ${
+                className={`w-14 h-14 rounded-full flex items-center justify-center font-semibold text-lg transition-colors ${
                   step.number <= currentStep
                     ? 'bg-primary text-primary-foreground'
                     : 'bg-secondary text-muted-foreground'
                 }`}
               >
                 {step.number < currentStep ? (
-                  <CheckCircle2 className="w-5 h-5" />
+                  <CheckCircle2 className="w-6 h-6" />
                 ) : (
                   step.number
                 )}
               </div>
-              {idx < steps.length - 1 && (
-                <div
-                  className={`flex-1 h-1 mx-2 rounded-full transition-colors ${
-                    step.number < currentStep ? 'bg-primary' : 'bg-secondary'
-                  }`}
-                />
-              )}
+              {/* Label */}
+              <span className="text-sm font-medium text-muted-foreground mt-3 text-center">
+                {step.label}
+              </span>
             </div>
-          ))}
-        </div>
-        <div className="flex justify-between text-xs text-muted-foreground">
-          {steps.map(step => (
-            <span key={step.number}>{step.label}</span>
           ))}
         </div>
       </div>

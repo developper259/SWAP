@@ -28,7 +28,6 @@ export default function Footer() {
             <li><a href="/support/faq" className="hover:opacity-100">Help Center</a></li>
             <li><a href="/support/safety" className="hover:opacity-100">Safety Tips</a></li>
             <li><a href="/support/contact" className="hover:opacity-100">Contact</a></li>
-            <li><a href="/support/faq" className="hover:opacity-100">FAQ</a></li>
           </ul>
         </div>
         <div>
