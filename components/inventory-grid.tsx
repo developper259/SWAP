@@ -26,8 +26,7 @@ const INVENTORY_ITEMS: InventoryItem[] = [
 
 export default function InventoryGrid() {
   return (
-    <div>
-      <h2 className="text-2xl font-bold text-foreground mb-4">My Wardrobe</h2>
+    <div className="p-4">
       <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
         {INVENTORY_ITEMS.map((item) => (
           <Link

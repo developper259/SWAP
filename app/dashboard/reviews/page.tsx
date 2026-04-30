@@ -38,7 +38,7 @@ const REVIEWS: Review[] = [
 
 export default function ReviewsPage() {
   return (
-    <div className="max-w-7xl mx-auto px-4 py-12">
+    <div>
       {/* Header */}
       <div className="mb-8">
         <h1 className="text-3xl font-bold text-foreground mb-2">Your Reviews</h1>

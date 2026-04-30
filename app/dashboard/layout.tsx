@@ -9,8 +9,10 @@ export default function DashboardLayout({
     <main className="bg-background min-h-screen">
       <div className="flex">
         <DashboardSidebar />
-        <div className="flex-1 md:ml-64">
-          {children}
+        <div className="flex-1 flex justify-center">
+          <div className="w-full max-w-7xl px-4 py-12">
+            {children}
+          </div>
         </div>
       </div>
     </main>
