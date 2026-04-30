@@ -1,29 +1,16 @@
-import { ArrowLeft, Bell, Lock, Eye, Trash2 } from 'lucide-react';
-import Link from 'next/link';
+import { Bell, Lock, Eye, Trash2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Switch } from '@/components/ui/switch';
 
 export default function SettingsPage() {
   return (
-    <main className="bg-background min-h-screen">
-      <div className="max-w-2xl mx-auto px-4 py-12">
-        {/* Back Button */}
-        <Link href="/dashboard" className="mb-6 inline-block">
-          <Button
-            variant="outline"
-            className="gap-2 rounded-lg border-border text-foreground hover:bg-secondary"
-          >
-            <ArrowLeft className="w-4 h-4" />
-            Back
-          </Button>
-        </Link>
-
-        {/* Header */}
-        <div className="mb-8">
-          <h1 className="text-3xl font-bold text-foreground mb-2">Settings</h1>
-          <p className="text-muted-foreground">Manage your account and preferences</p>
-        </div>
+    <div className="max-w-2xl mx-auto px-4 py-12">
+      {/* Header */}
+      <div className="mb-8">
+        <h1 className="text-3xl font-bold text-foreground mb-2">Settings</h1>
+        <p className="text-muted-foreground">Manage your account and preferences</p>
+      </div>
 
         {/* Profile Settings */}
         <div className="bg-card border border-border rounded-2xl p-6 mb-6">
@@ -153,7 +140,6 @@ export default function SettingsPage() {
             </p>
           </div>
         </div>
-      </div>
-    </main>
+    </div>
   );
 }

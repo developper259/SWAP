@@ -1,5 +1,4 @@
-import { ArrowLeft, MessageSquare } from 'lucide-react';
-import Link from 'next/link';
+import { MessageSquare } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 
@@ -70,24 +69,12 @@ const ALL_TRADES: Trade[] = [
 
 export default function TradesPage() {
   return (
-    <main className="bg-background min-h-screen">
-      <div className="max-w-5xl mx-auto px-4 py-12">
-        {/* Back Button */}
-        <Link href="/dashboard" className="mb-6 inline-block">
-          <Button
-            variant="outline"
-            className="gap-2 rounded-lg border-border text-foreground hover:bg-secondary"
-          >
-            <ArrowLeft className="w-4 h-4" />
-            Back
-          </Button>
-        </Link>
-
-        {/* Header */}
-        <div className="mb-8">
-          <h1 className="text-3xl font-bold text-foreground mb-2">All Trades</h1>
-          <p className="text-muted-foreground">Track all your trade negotiations</p>
-        </div>
+    <div className="max-w-5xl mx-auto px-4 py-12">
+      {/* Header */}
+      <div className="mb-8">
+        <h1 className="text-3xl font-bold text-foreground mb-2">All Trades</h1>
+        <p className="text-muted-foreground">Track all your trade negotiations</p>
+      </div>
 
         {/* Stats */}
         <div className="grid grid-cols-4 gap-4 mb-8">
@@ -172,7 +159,6 @@ export default function TradesPage() {
             );
           })}
         </div>
-      </div>
-    </main>
+    </div>
   );
 }

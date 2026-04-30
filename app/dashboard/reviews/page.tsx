@@ -1,7 +1,4 @@
-import { ArrowLeft, Star, MessageSquare, User } from 'lucide-react';
-import Link from 'next/link';
-import { Button } from '@/components/ui/button';
-import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
+import { Star } from 'lucide-react';
 
 interface Review {
   id: string;
@@ -41,24 +38,12 @@ const REVIEWS: Review[] = [
 
 export default function ReviewsPage() {
   return (
-    <main className="bg-background min-h-screen">
-      <div className="max-w-7xl mx-auto px-4 py-12">
-        {/* Back Button */}
-        <Link href="/dashboard" className="mb-6 inline-block">
-          <Button
-            variant="outline"
-            className="gap-2 rounded-lg border-border text-foreground hover:bg-secondary"
-          >
-            <ArrowLeft className="w-4 h-4" />
-            Back
-          </Button>
-        </Link>
-
-        {/* Header */}
-        <div className="mb-8">
-          <h1 className="text-3xl font-bold text-foreground mb-2">Your Reviews</h1>
-          <p className="text-muted-foreground">See what other traders think about you</p>
-        </div>
+    <div className="max-w-7xl mx-auto px-4 py-12">
+      {/* Header */}
+      <div className="mb-8">
+        <h1 className="text-3xl font-bold text-foreground mb-2">Your Reviews</h1>
+        <p className="text-muted-foreground">See what other traders think about you</p>
+      </div>
 
         {/* Stats */}
         <div className="grid md:grid-cols-3 gap-4 mb-12">
@@ -123,7 +108,6 @@ export default function ReviewsPage() {
             </div>
           ))}
         </div>
-      </div>
-    </main>
+    </div>
   );
 }
