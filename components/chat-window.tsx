@@ -120,7 +120,7 @@ export default function ChatWindow() {
             size="sm"
             className="flex-1 bg-primary hover:bg-primary/90 text-primary-foreground gap-2 rounded-lg"
           >
-            <Link href="/propose-exchange">
+            <Link href="/propose-swap">
               Propose Exchange
             </Link>
           </Button>

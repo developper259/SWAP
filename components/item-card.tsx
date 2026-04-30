@@ -88,12 +88,12 @@ export default function ItemCard({
           onClick={(e) => {
             e.stopPropagation();
             e.preventDefault();
-            router.push(`/propose-exchange?item=${id}`);
+            router.push(`/make-offer?item=${id}`);
           }}
           className="w-full rounded-xl bg-primary hover:bg-primary/90 text-primary-foreground font-semibold flex gap-2"
         >
           <MessageCircle className="w-4 h-4" />
-          Propose Swap
+          Make an offer
         </Button>
       </div>
     </div>

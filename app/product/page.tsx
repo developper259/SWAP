@@ -201,10 +201,12 @@ export default async function ProductPage({ searchParams }: ProductPageProps) {
             />
 
             {/* CTA Buttons */}
-            <div className="space-y-3">
-              <Button size="lg" className="w-full bg-primary hover:bg-primary/90 text-primary-foreground rounded-lg">
-                Make a Trade Offer
-              </Button>
+            <div className="flex flex-col gap-2">
+              <Link href={`/make-offer?item=${product.id}`}>
+                <Button size="lg" className="w-full bg-primary hover:bg-primary/90 text-primary-foreground rounded-lg">
+                  Make a Trade Offer
+                </Button>
+              </Link>
               <Link href="/chat" className="block">
                 <Button
                   variant="outline"

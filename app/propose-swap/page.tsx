@@ -14,16 +14,15 @@ interface TradeItem {
   image: string;
   title: string;
   condition: string;
-  estimatedValue?: string;
 }
 
 // Mock data for the trade
 const YOUR_ITEMS: TradeItem[] = [
-  { id: '1', image: '🧥', title: 'Vintage Leather Jacket', condition: 'Good', estimatedValue: '$120' },
+  { id: '1', image: '🧥', title: 'Vintage Leather Jacket', condition: 'Good' },
 ];
 
 const THEIR_ITEMS: TradeItem[] = [
-  { id: '2', image: '📷', title: 'Canon EOS Camera', condition: 'Like New', estimatedValue: '$150' },
+  { id: '2', image: '📷', title: 'Canon EOS Camera', condition: 'Like New' },
 ];
 
 const TRADER_INFO = {
@@ -98,15 +97,10 @@ export default function ProposeExchangePage() {
                   </div>
                   <div className="flex-1 min-w-0">
                     <h3 className="font-semibold text-foreground truncate">{item.title}</h3>
-                    <div className="flex items-center gap-2 mt-1">
+                    <div className="mt-1">
                       <Badge variant="secondary" className="text-xs">
                         {item.condition}
                       </Badge>
-                      {item.estimatedValue && (
-                        <span className="text-xs text-muted-foreground">
-                          Est. {item.estimatedValue}
-                        </span>
-                      )}
                     </div>
                   </div>
                 </div>
@@ -139,15 +133,10 @@ export default function ProposeExchangePage() {
                   </div>
                   <div className="flex-1 min-w-0">
                     <h3 className="font-semibold text-foreground truncate">{item.title}</h3>
-                    <div className="flex items-center gap-2 mt-1">
+                    <div className="mt-1">
                       <Badge variant="secondary" className="text-xs">
                         {item.condition}
                       </Badge>
-                      {item.estimatedValue && (
-                        <span className="text-xs text-muted-foreground">
-                          Est. {item.estimatedValue}
-                        </span>
-                      )}
                     </div>
                   </div>
                 </div>
