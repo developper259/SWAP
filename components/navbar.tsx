@@ -1,9 +1,9 @@
 'use client';
 
 import Link from 'next/link';
-import { Search, Bell, User, Plus, MessageCircle } from 'lucide-react';
+import { Bell, User, Plus, MessageCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
+import SearchBar from '@/components/search-bar';
 
 export default function Navbar() {
   return (
@@ -18,14 +18,7 @@ export default function Navbar() {
         </Link>
 
         {/* Search Bar */}
-        <Link href="/browse" className="flex-1 max-w-md hidden md:flex">
-          <div className="relative w-full">
-            <Search className="absolute left-3 top-2.5 w-4 h-4 text-muted-foreground pointer-events-none" />
-            <div className="pl-9 pr-4 h-10 rounded-xl bg-secondary text-muted-foreground flex items-center cursor-pointer hover:bg-secondary/80 transition-colors">
-              Search items...
-            </div>
-          </div>
-        </Link>
+        <SearchBar />
 
         {/* Right Actions */}
         <div className="flex items-center gap-3">

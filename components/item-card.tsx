@@ -83,16 +83,17 @@ export default function ItemCard({
           <span className="text-muted-foreground group-hover/user:text-primary transition-colors">{user}</span>
         </div>
 
-        {/* Trade Button */}
+        {/* Swap Button */}
         <Button 
           onClick={(e) => {
             e.stopPropagation();
-            console.log('Propose trade:', id);
+            e.preventDefault();
+            router.push(`/propose-exchange?item=${id}`);
           }}
           className="w-full rounded-xl bg-primary hover:bg-primary/90 text-primary-foreground font-semibold flex gap-2"
         >
           <MessageCircle className="w-4 h-4" />
-          Propose Trade
+          Propose Swap
         </Button>
       </div>
     </div>
