@@ -18,8 +18,8 @@ const NAV_ITEMS: NavItem[] = [
     icon: <Package className="w-5 h-5" />,
   },
   {
-    href: '/dashboard/trades',
-    label: 'Active Trades',
+    href: '/dashboard/swap',
+    label: 'Active Swap',
     icon: <LayoutDashboard className="w-5 h-5" />,
   },
   {
