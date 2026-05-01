@@ -3,6 +3,7 @@
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { MessageSquare } from 'lucide-react';
+import { useLanguage } from '@/lib/language-context';
 
 interface ActiveTrade {
   id: string;
@@ -14,47 +15,48 @@ interface ActiveTrade {
   date: string;
 }
 
-const STATUS_CONFIG = {
-  pending: { bg: 'bg-yellow-50', text: 'text-yellow-800', label: 'Pending Approval' },
-  approved: { bg: 'bg-blue-50', text: 'text-blue-800', label: 'In Transit' },
-  transit: { bg: 'bg-purple-50', text: 'text-purple-800', label: 'Delivery Expected' },
-  completed: { bg: 'bg-green-50', text: 'text-green-800', label: 'Completed' },
-};
-
-const ACTIVE_TRADES: ActiveTrade[] = [
-  {
-    id: '1',
-    partner: 'Sarah Chen',
-    partnerAvatar: '👩‍🦰',
-    itemA: 'Vintage Leather Jacket',
-    itemB: 'Digital Camera',
-    status: 'approved',
-    date: 'Expected: Mar 15',
-  },
-  {
-    id: '2',
-    partner: 'Mike Johnson',
-    partnerAvatar: '👨‍💼',
-    itemA: 'Air Jordan 1s',
-    itemB: 'Gaming Console',
-    status: 'pending',
-    date: 'Awaiting confirmation',
-  },
-  {
-    id: '3',
-    partner: 'Emma Wilson',
-    partnerAvatar: '👩‍🎨',
-    itemA: 'Canon EOS Camera',
-    itemB: 'MacBook Air',
-    status: 'completed',
-    date: 'Completed: Mar 8',
-  },
-];
-
 export default function ActiveTradesList() {
+  const { t } = useLanguage();
+
+  const ACTIVE_TRADES: ActiveTrade[] = [
+    {
+      id: '1',
+      partner: 'Sarah Chen',
+      partnerAvatar: '👩‍🦰',
+      itemA: 'Vintage Leather Jacket',
+      itemB: 'Digital Camera',
+      status: 'approved',
+      date: `${t('activeTrades.expected')}: Mar 15`,
+    },
+    {
+      id: '2',
+      partner: 'Mike Johnson',
+      partnerAvatar: '👨‍💼',
+      itemA: 'Air Jordan 1s',
+      itemB: 'Gaming Console',
+      status: 'pending',
+      date: t('activeTrades.awaitingConfirmation'),
+    },
+    {
+      id: '3',
+      partner: 'Emma Wilson',
+      partnerAvatar: '👩‍🎨',
+      itemA: 'Canon EOS Camera',
+      itemB: 'MacBook Air',
+      status: 'completed',
+      date: `${t('activeTrades.completed')}: Mar 8`,
+    },
+  ];
+
+  const STATUS_CONFIG = {
+    pending: { bg: 'bg-yellow-50', text: 'text-yellow-800', label: t('activeTrades.status.pending') },
+    approved: { bg: 'bg-blue-50', text: 'text-blue-800', label: t('activeTrades.status.approved') },
+    transit: { bg: 'bg-purple-50', text: 'text-purple-800', label: t('activeTrades.status.transit') },
+    completed: { bg: 'bg-green-50', text: 'text-green-800', label: t('activeTrades.status.completed') },
+  };
   return (
     <div>
-      <h2 className="text-2xl font-bold text-foreground mb-4">Active Trades</h2>
+      <h2 className="text-2xl font-bold text-foreground mb-4">{t('activeTrades.title')}</h2>
       <div className="space-y-4">
         {ACTIVE_TRADES.map((trade) => {
           const config = STATUS_CONFIG[trade.status];
@@ -80,7 +82,7 @@ export default function ActiveTradesList() {
                   <div className="bg-secondary/50 rounded-lg p-3 space-y-1">
                     <p className="text-sm text-muted-foreground">
                       <span className="text-foreground font-semibold">{trade.itemA}</span>
-                      {' '}for{' '}
+                      {' '}{t('activeTrades.for')}{' '}
                       <span className="text-foreground font-semibold">{trade.itemB}</span>
                     </p>
                   </div>
@@ -99,7 +101,7 @@ export default function ActiveTradesList() {
                     className="gap-2 rounded-lg border-border text-foreground hover:bg-secondary"
                   >
                     <MessageSquare className="w-4 h-4" />
-                    Chat
+                    {t('activeTrades.chat')}
                   </Button>
                 </div>
               </div>

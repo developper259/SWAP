@@ -4,6 +4,7 @@ import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { Star, MessageCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { useLanguage } from '@/lib/language-context';
 
 interface ItemCardProps {
   id?: string;
@@ -28,6 +29,7 @@ export default function ItemCard({
   user,
   userImage,
 }: ItemCardProps) {
+  const { t } = useLanguage();
   const router = useRouter();
 
   return (
@@ -46,7 +48,7 @@ export default function ItemCard({
             {title}
           </h3>
           <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-2 py-1 rounded-lg text-xs font-medium">
-            {condition}
+            {t(`itemCard.condition.${condition.toLowerCase().replace(' ', '')}`)}
           </div>
         </div>
 
@@ -93,7 +95,7 @@ export default function ItemCard({
           className="w-full rounded-xl bg-primary hover:bg-primary/90 text-primary-foreground font-semibold flex gap-2"
         >
           <MessageCircle className="w-4 h-4" />
-          Make an offer
+          {t('itemCard.makeOffer')}
         </Button>
       </div>
     </div>

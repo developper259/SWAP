@@ -8,6 +8,7 @@ import SearchFilters from '@/components/search-filters';
 import SearchHeader from '@/components/search-header';
 import EmptyState from '@/components/empty-state';
 import { Menu, X, Search, Command } from 'lucide-react';
+import { useLanguage } from '@/lib/language-context';
 
 const MOCK_ITEMS = [
   {
@@ -93,6 +94,7 @@ const MOCK_ITEMS = [
 ];
 
 export default function BrowsePage() {
+  const { t } = useLanguage();
   const searchParams = useSearchParams();
   const router = useRouter();
   const searchQuery = searchParams.get('q') || '';
@@ -198,7 +200,7 @@ export default function BrowsePage() {
                 onFocus={() => setIsOpen(true)}
                 onBlur={() => setTimeout(() => setIsOpen(false), 200)}
                 onKeyDown={handleKeyDown}
-                placeholder="Search items..."
+                placeholder={t('browsePage.searchPlaceholder')}
                 className="w-full pl-9 pr-16 h-10 rounded-xl bg-secondary text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all"
               />
               <div className="absolute right-3 top-1/2 -translate-y-1/2 flex items-center gap-1 text-xs text-muted-foreground pointer-events-none">
@@ -215,7 +217,7 @@ export default function BrowsePage() {
               onMouseLeave={() => setHighlightedIndex(-1)}
             >
               <div className="p-2">
-                <p className="text-xs text-muted-foreground px-2 py-1 font-medium">Quick Results</p>
+                <p className="text-xs text-muted-foreground px-2 py-1 font-medium">{t('browsePage.quickResults')}</p>
                 {suggestedItems.map((item, index) => (
                   <button
                     key={item.id}
@@ -242,7 +244,7 @@ export default function BrowsePage() {
               </div>
               <div className="border-t border-border px-3 py-2 bg-secondary/30">
                 <p className="text-xs text-muted-foreground">
-                  Use <span className="font-medium">↑↓</span> to navigate, <span className="font-medium">Enter</span> to select
+                  {t('browsePage.useArrows')}
                 </p>
               </div>
             </div>
@@ -260,12 +262,12 @@ export default function BrowsePage() {
             {sidebarOpen ? (
               <>
                 <X className="w-4 h-4" />
-                Close Filters
+                {t('browsePage.closeFilters')}
               </>
             ) : (
               <>
                 <Menu className="w-4 h-4" />
-                Show Filters
+                {t('browsePage.showFilters')}
               </>
             )}
           </Button>
@@ -278,7 +280,7 @@ export default function BrowsePage() {
               sidebarOpen ? 'block' : 'hidden'
             } lg:block lg:col-span-1 bg-card border border-border rounded-2xl p-6 h-fit sticky top-20`}
           >
-            <h2 className="text-lg font-bold text-foreground mb-6">Filters</h2>
+            <h2 className="text-lg font-bold text-foreground mb-6">{t('browsePage.filters')}</h2>
             <SearchFilters onFiltersChange={handleFiltersChange} />
           </div>
 

@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import TransactionBox from './transaction-box';
 import AddItemToTradeModal from './add-item-to-trade-modal';
+import { useLanguage } from '@/lib/language-context';
 
 interface Message {
   id: string;
@@ -43,6 +44,7 @@ const MESSAGES: Message[] = [
 ];
 
 export default function ChatWindow() {
+  const { t } = useLanguage();
   const [message, setMessage] = useState('');
   const [isAddItemModalOpen, setIsAddItemModalOpen] = useState(false);
   const [selectedTradeItems, setSelectedTradeItems] = useState<any[]>([]);
@@ -56,18 +58,18 @@ export default function ChatWindow() {
             <h3 className="font-semibold text-foreground text-lg">Sarah Chen</h3>
             <p className="text-sm text-muted-foreground flex items-center gap-2">
               <span className="w-2 h-2 bg-green-500 rounded-full" />
-              Online
+              {t('chat.online')}
             </p>
           </div>
           <Button variant="ghost" size="sm" className="text-primary hover:bg-secondary">
-            View Profile
+            {t('chat.viewProfile')}
           </Button>
         </div>
       </div>
 
       {/* Transaction Box */}
       <div className="p-4 border-b border-border bg-card/50">
-        <p className="text-xs font-semibold text-muted-foreground mb-3">PROPOSED TRADE</p>
+        <p className="text-xs font-semibold text-muted-foreground mb-3">{t('chat.proposedTrade')}</p>
         <TransactionBox
           itemA={{
             name: 'Vintage Leather Jacket',
@@ -113,7 +115,7 @@ export default function ChatWindow() {
             className="gap-2 text-sm rounded-lg border-border"
           >
             <Plus className="w-4 h-4" />
-            Add Item to Trade
+            {t('chat.addItemToTrade')}
           </Button>
           <Button
             asChild
@@ -121,7 +123,7 @@ export default function ChatWindow() {
             className="flex-1 bg-primary hover:bg-primary/90 text-primary-foreground gap-2 rounded-lg"
           >
             <Link href="/propose-swap">
-              Propose Exchange
+              {t('chat.proposeExchange')}
             </Link>
           </Button>
         </div>
@@ -139,7 +141,7 @@ export default function ChatWindow() {
         {/* Message Input */}
         <div className="flex gap-2">
           <Input
-            placeholder="Type your message..."
+            placeholder={t('chat.typeMessage')}
             value={message}
             onChange={(e) => setMessage(e.target.value)}
             className="rounded-lg bg-secondary border-0"

@@ -18,6 +18,7 @@ import {
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
+import { useLanguage } from '@/lib/language-context';
 
 interface SafetyTip {
   icon: React.ElementType;
@@ -154,17 +155,138 @@ const QUICK_TIPS = [
 ];
 
 export default function SafetyPage() {
+  const { t } = useLanguage();
+
+  const SAFETY_SECTIONS = [
+    {
+      id: 'how-to-swap',
+      title: t('safety.howToSwap.title'),
+      description: t('safety.howToSwap.description'),
+      icon: Shield,
+      tips: [
+        {
+          icon: Eye,
+          title: t('safety.howToSwap.tips.reviewProfiles.title'),
+          description: t('safety.howToSwap.tips.reviewProfiles.description'),
+          color: 'text-blue-500',
+        },
+        {
+          icon: MessageCircle,
+          title: t('safety.howToSwap.tips.communicateApp.title'),
+          description: t('safety.howToSwap.tips.communicateApp.description'),
+          color: 'text-green-500',
+        },
+        {
+          icon: Camera,
+          title: t('safety.howToSwap.tips.documentItems.title'),
+          description: t('safety.howToSwap.tips.documentItems.description'),
+          color: 'text-purple-500',
+        },
+        {
+          icon: FileText,
+          title: t('safety.howToSwap.tips.honestCondition.title'),
+          description: t('safety.howToSwap.tips.honestCondition.description'),
+          color: 'text-amber-500',
+        },
+        {
+          icon: ThumbsUp,
+          title: t('safety.howToSwap.tips.honestReviews.title'),
+          description: t('safety.howToSwap.tips.honestReviews.description'),
+          color: 'text-teal-500',
+        },
+      ],
+    },
+    {
+      id: 'meeting-in-person',
+      title: t('safety.meetingPerson.title'),
+      description: t('safety.meetingPerson.description'),
+      icon: Users,
+      tips: [
+        {
+          icon: MapPin,
+          title: t('safety.meetingPerson.tips.safeLocation.title'),
+          description: t('safety.meetingPerson.tips.safeLocation.description'),
+          color: 'text-red-500',
+        },
+        {
+          icon: Clock,
+          title: t('safety.meetingPerson.tips.daylightHours.title'),
+          description: t('safety.meetingPerson.tips.daylightHours.description'),
+          color: 'text-orange-500',
+        },
+        {
+          icon: Users,
+          title: t('safety.meetingPerson.tips.bringFriend.title'),
+          description: t('safety.meetingPerson.tips.bringFriend.description'),
+          color: 'text-indigo-500',
+        },
+        {
+          icon: Phone,
+          title: t('safety.meetingPerson.tips.shareLocation.title'),
+          description: t('safety.meetingPerson.tips.shareLocation.description'),
+          color: 'text-pink-500',
+        },
+        {
+          icon: CheckCircle,
+          title: t('safety.meetingPerson.tips.inspectBefore.title'),
+          description: t('safety.meetingPerson.tips.inspectBefore.description'),
+          color: 'text-emerald-500',
+        },
+      ],
+    },
+    {
+      id: 'reporting-scams',
+      title: t('safety.reportingScams.title'),
+      description: t('safety.reportingScams.description'),
+      icon: AlertTriangle,
+      tips: [
+        {
+          icon: AlertTriangle,
+          title: t('safety.reportingScams.tips.warningSigns.title'),
+          description: t('safety.reportingScams.tips.warningSigns.description'),
+          color: 'text-red-500',
+        },
+        {
+          icon: MessageCircle,
+          title: t('safety.reportingScams.tips.reportImmediately.title'),
+          description: t('safety.reportingScams.tips.reportImmediately.description'),
+          color: 'text-amber-500',
+        },
+        {
+          icon: Camera,
+          title: t('safety.reportingScams.tips.documentEverything.title'),
+          description: t('safety.reportingScams.tips.documentEverything.description'),
+          color: 'text-purple-500',
+        },
+        {
+          icon: Shield,
+          title: t('safety.reportingScams.tips.protectInfo.title'),
+          description: t('safety.reportingScams.tips.protectInfo.description'),
+          color: 'text-purple-500',
+        },
+      ],
+    },
+  ];
+
+  const QUICK_TIPS = [
+    t('safety.quickTips.trustInstincts'),
+    t('safety.quickTips.noMoneyFirst'),
+    t('safety.quickTips.verifyHighValue'),
+    t('safety.quickTips.trackedShipping'),
+    t('safety.quickTips.reportSuspicious'),
+  ];
+
   return (
     <div className="space-y-12">
       {/* Page Header */}
       <div className="text-center lg:text-left">
         <div className="inline-flex items-center gap-2 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 px-4 py-2 rounded-full text-sm font-medium mb-4">
           <Shield className="w-4 h-4" />
-          Your Safety Matters
+          {t('safety.safetyMatters')}
         </div>
-        <h2 className="text-3xl font-bold text-foreground mb-2">Safety Tips</h2>
+        <h2 className="text-3xl font-bold text-foreground mb-2">{t('safety.title')}</h2>
         <p className="text-lg text-muted-foreground max-w-2xl">
-          Learn how to trade confidently and protect yourself from potential issues
+          {t('safety.subtitle')}
         </p>
       </div>
 
@@ -172,7 +294,7 @@ export default function SafetyPage() {
       <div className="bg-gradient-to-r from-primary/10 via-primary/5 to-primary/10 border border-primary/20 rounded-2xl p-6">
         <h3 className="font-semibold text-foreground mb-4 flex items-center gap-2">
           <CheckCircle className="w-5 h-5 text-primary" />
-          Quick Safety Checklist
+          {t('safety.quickChecklist')}
         </h3>
         <ul className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
           {QUICK_TIPS.map((tip, index) => (
@@ -239,17 +361,16 @@ export default function SafetyPage() {
           </div>
           <div className="flex-1">
             <h3 className="text-xl font-bold text-red-900 dark:text-red-100 mb-2">
-              Emergency Situation?
+              {t('safety.emergency.title')}
             </h3>
             <p className="text-red-700 dark:text-red-300">
-              If you feel you\'re in immediate danger, contact local emergency services first. 
-              Then report the incident to us so we can take appropriate action on the platform.
+              {t('safety.emergency.description')}
             </p>
           </div>
           <div className="flex flex-col sm:flex-row gap-3">
             <Link href="/support/contact">
               <Button variant="outline" className="w-full sm:w-auto border-red-300 dark:border-red-700 text-red-700 dark:text-red-300 hover:bg-red-100 dark:hover:bg-red-800/50">
-                Report an Incident
+                {t('safety.emergency.reportIncident')}
               </Button>
             </Link>
           </div>
@@ -259,22 +380,22 @@ export default function SafetyPage() {
       {/* Bottom CTA */}
       <div className="text-center bg-card border border-border rounded-2xl p-8">
         <h3 className="text-xl font-semibold text-foreground mb-2">
-          Have More Questions?
+          {t('safety.emergency.haveMoreQuestions')}
         </h3>
         <p className="text-muted-foreground mb-6">
-          Our support team is available to help with any safety concerns
+          {t('safety.emergency.haveMoreQuestionsDesc')}
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Link href="/support/faq">
             <Button variant="outline" className="w-full sm:w-auto gap-2">
-              Browse FAQ
+              {t('safety.emergency.browseFaq')}
               <ArrowRight className="w-4 h-4" />
             </Button>
           </Link>
           <Link href="/support/contact">
             <Button className="w-full sm:w-auto gap-2">
               <MessageCircle className="w-4 h-4" />
-              Contact Support
+              {t('safety.emergency.contactSupport')}
             </Button>
           </Link>
         </div>

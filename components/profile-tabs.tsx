@@ -5,6 +5,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import ItemCard from '@/components/item-card';
 import { Star } from 'lucide-react';
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
+import { useLanguage } from '@/lib/language-context';
 
 interface ProfileTabsProps {
   availableItems?: any[];
@@ -19,6 +20,7 @@ export function ProfileTabs({
   bio = 'I love trading vintage items and unique finds. Always open to new collections!',
   preferredItems = ['Fashion', 'Vintage', 'Books'],
 }: ProfileTabsProps) {
+  const { t } = useLanguage();
   const [activeTab, setActiveTab] = useState('items');
 
   const defaultItems = [
@@ -86,13 +88,13 @@ export function ProfileTabs({
       <Tabs value={activeTab} onValueChange={setActiveTab}>
         <TabsList className="grid w-full max-w-md grid-cols-3 rounded-lg bg-secondary mb-6">
           <TabsTrigger value="items" className="rounded">
-            Available Items
+            {t('profileTabs.availableItems')}
           </TabsTrigger>
           <TabsTrigger value="reviews" className="rounded">
-            Reviews
+            {t('profileTabs.reviews')}
           </TabsTrigger>
           <TabsTrigger value="about" className="rounded">
-            About
+            {t('profileTabs.about')}
           </TabsTrigger>
         </TabsList>
 
@@ -136,12 +138,12 @@ export function ProfileTabs({
         {/* About Tab */}
         <TabsContent value="about" className="space-y-6">
           <div>
-            <h3 className="font-semibold text-foreground mb-2">About</h3>
+            <h3 className="font-semibold text-foreground mb-2">{t('profileTabs.about')}</h3>
             <p className="text-foreground leading-relaxed">{bio}</p>
           </div>
 
           <div>
-            <h3 className="font-semibold text-foreground mb-3">Interested In</h3>
+            <h3 className="font-semibold text-foreground mb-3">{t('profileTabs.interestedIn')}</h3>
             <div className="flex flex-wrap gap-2">
               {preferredItems.map(item => (
                 <div

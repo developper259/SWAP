@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { Star, MapPin, Clock, Shield, Heart } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
+import { useLanguage } from '@/lib/language-context';
 
 interface ProductImageGalleryProps {
   images: string[];
@@ -60,6 +61,8 @@ export function UserProfileCard({
   responseTime,
   avatar,
 }: UserProfileCardProps) {
+  const { t } = useLanguage();
+  
   return (
     <div className="border border-border rounded-2xl p-4 bg-card">
       <Link href={`/profile?id=${userId}`} className="flex items-start gap-3 mb-4 group/profile">
@@ -94,7 +97,7 @@ export function UserProfileCard({
           variant="outline"
           className="w-full mt-4 rounded-lg border-border text-foreground hover:bg-secondary"
         >
-          View Profile
+          {t('productDetail.viewProfile')}
         </Button>
       </Link>
     </div>
@@ -106,12 +109,14 @@ interface SafetyBoxProps {
 }
 
 export function SafetyBox({ tips }: SafetyBoxProps) {
+  const { t } = useLanguage();
+  
   return (
     <div className="border border-green-200 bg-green-50 rounded-2xl p-4">
       <div className="flex gap-3">
         <Shield className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
         <div>
-          <h4 className="font-semibold text-green-900 mb-2">Safety First</h4>
+          <h4 className="font-semibold text-green-900 mb-2">{t('productDetail.safetyFirst')}</h4>
           <ul className="space-y-1 text-sm text-green-800">
             {tips.map((tip, idx) => (
               <li key={idx} className="flex gap-2">
@@ -135,9 +140,11 @@ interface RelatedItemsProps {
 }
 
 export function RelatedItems({ items }: RelatedItemsProps) {
+  const { t } = useLanguage();
+  
   return (
     <div>
-      <h3 className="text-lg font-bold text-foreground mb-4">Related Items</h3>
+      <h3 className="text-lg font-bold text-foreground mb-4">{t('productDetail.relatedItems')}</h3>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         {items.map((item) => (
           <div

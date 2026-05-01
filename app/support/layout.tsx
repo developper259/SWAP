@@ -9,27 +9,7 @@ import {
   ChevronRight 
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
-
-const navigation = [
-  {
-    name: 'Help Center',
-    href: '/support/faq',
-    icon: HelpCircle,
-    description: 'Find answers to common questions',
-  },
-  {
-    name: 'Safety Tips',
-    href: '/support/safety',
-    icon: Shield,
-    description: 'Learn how to trade safely',
-  },
-  {
-    name: 'Contact Us',
-    href: '/support/contact',
-    icon: MessageCircle,
-    description: 'Get in touch with our team',
-  },
-];
+import { useLanguage } from '@/lib/language-context';
 
 export default function SupportLayout({
   children,
@@ -37,15 +17,37 @@ export default function SupportLayout({
   children: React.ReactNode;
 }) {
   const pathname = usePathname();
+  const { t } = useLanguage();
+
+  const navigation = [
+    {
+      name: t('support.navigation.helpCenter'),
+      href: '/support/faq',
+      icon: HelpCircle,
+      description: t('support.navigation.helpCenterDesc'),
+    },
+    {
+      name: t('support.navigation.safetyTips'),
+      href: '/support/safety',
+      icon: Shield,
+      description: t('support.navigation.safetyTipsDesc'),
+    },
+    {
+      name: t('support.navigation.contactUs'),
+      href: '/support/contact',
+      icon: MessageCircle,
+      description: t('support.navigation.contactUsDesc'),
+    },
+  ];
 
   return (
     <main className="bg-background min-h-screen">
       <div className="max-w-7xl mx-auto px-4 py-12">
         {/* Header */}
         <div className="mb-12">
-          <h1 className="text-4xl font-bold text-foreground mb-2">Support & Safety</h1>
+          <h1 className="text-4xl font-bold text-foreground mb-2">{t('support.title')}</h1>
           <p className="text-lg text-muted-foreground">
-            We're here to help you trade safely and confidently
+            {t('support.subtitle')}
           </p>
         </div>
 
@@ -100,16 +102,16 @@ export default function SupportLayout({
 
             {/* Quick Help Card */}
             <div className="mt-8 p-6 bg-gradient-to-br from-primary/10 to-primary/5 rounded-2xl border border-primary/20">
-              <h3 className="font-semibold text-foreground mb-2">Need immediate help?</h3>
+              <h3 className="font-semibold text-foreground mb-2">{t('support.needHelp')}</h3>
               <p className="text-sm text-muted-foreground mb-4">
-                Our support team typically responds within 24 hours.
+                {t('support.needHelpDesc')}
               </p>
               <Link
                 href="/support/contact"
                 className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:underline"
               >
                 <MessageCircle className="w-4 h-4" />
-                Contact Support
+                {t('support.contactSupport')}
               </Link>
             </div>
           </aside>

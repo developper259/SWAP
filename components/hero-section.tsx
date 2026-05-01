@@ -2,18 +2,20 @@
 
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
+import { useLanguage } from '@/lib/language-context';
 
 export default function HeroSection() {
+  const { t } = useLanguage();
   return (
     <section className="max-w-7xl mx-auto px-4 py-16 md:py-24 grid md:grid-cols-2 gap-12 items-center">
       {/* Left Side - Content */}
       <div className="flex flex-col gap-6">
         <div className="space-y-4">
           <h1 className="text-5xl md:text-6xl font-bold text-foreground leading-tight text-balance">
-            Exchange Instead of Buying
+            {t('home.title')}
           </h1>
           <p className="text-lg text-muted-foreground text-pretty">
-            Trade items you no longer need with people in your community. Sustainable, affordable, and fun.
+            {t('home.subtitle')}
           </p>
         </div>
 
@@ -22,7 +24,7 @@ export default function HeroSection() {
             size="lg"
             className="rounded-xl bg-primary hover:bg-primary/90 text-primary-foreground font-semibold"
           >
-            Start Trading Now
+            {t('home.startTrading')}
             <ArrowRight className="w-4 h-4 ml-2" />
           </Button>
           <Button
@@ -30,16 +32,16 @@ export default function HeroSection() {
             size="lg"
             className="rounded-xl border-border hover:bg-secondary"
           >
-            Learn How It Works
+            {t('home.learnHow')}
           </Button>
         </div>
 
         <div className="flex gap-6 text-sm text-muted-foreground pt-4">
           <div>
-            <span className="font-semibold text-foreground">15K+</span> Items Listed
+            <span className="font-semibold text-foreground">15K+</span> {t('home.itemsListed')}
           </div>
           <div>
-            <span className="font-semibold text-foreground">8K+</span> Active Traders
+            <span className="font-semibold text-foreground">8K+</span> {t('home.activeTraders')}
           </div>
         </div>
       </div>

@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { CheckCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
+import { useLanguage } from '@/lib/language-context';
 
 interface InventoryItem {
   id: string;
@@ -25,6 +26,7 @@ const INVENTORY_ITEMS: InventoryItem[] = [
 ];
 
 export default function InventoryGrid() {
+  const { t } = useLanguage();
   return (
     <div className="p-4">
       <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -63,7 +65,7 @@ export default function InventoryGrid() {
                 }}
               >
                 <CheckCircle className="w-3 h-3" />
-                Mark as Swapped
+                {t('dashboard.markAsSwapped')}
               </Button>
             </div>
           </Link>

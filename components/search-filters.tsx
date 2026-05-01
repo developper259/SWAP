@@ -6,12 +6,14 @@ import { Label } from '@/components/ui/label';
 import { Slider } from '@/components/ui/slider';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { ChevronDown } from 'lucide-react';
+import { useLanguage } from '@/lib/language-context';
 
 interface SearchFiltersProps {
   onFiltersChange?: (filters: any) => void;
 }
 
 export default function SearchFilters({ onFiltersChange }: SearchFiltersProps) {
+  const { t } = useLanguage();
   const [expandedSections, setExpandedSections] = useState({
     category: true,
     condition: true,
@@ -26,7 +28,7 @@ export default function SearchFilters({ onFiltersChange }: SearchFiltersProps) {
     minRating: 0,
   });
 
-  const toggleSection = (section: string) => {
+  const toggleSection = (section: keyof typeof expandedSections) => {
     setExpandedSections(prev => ({
       ...prev,
       [section]: !prev[section],
@@ -37,6 +39,29 @@ export default function SearchFilters({ onFiltersChange }: SearchFiltersProps) {
   const conditions = ['New', 'Like New', 'Good', 'Fair', 'Used'];
   const ratings = [5, 4, 3, 2, 1];
 
+  const getCategoryTranslation = (category: string) => {
+    const categoryMap: { [key: string]: string } = {
+      'Fashion': t('searchFilters.categories.fashion'),
+      'Electronics': t('searchFilters.categories.electronics'),
+      'Home': t('searchFilters.categories.home'),
+      'Books': t('searchFilters.categories.books'),
+      'Sports': t('searchFilters.categories.sports'),
+      'Art': t('searchFilters.categories.art')
+    };
+    return categoryMap[category] || category;
+  };
+
+  const getConditionTranslation = (condition: string) => {
+    const conditionMap: { [key: string]: string } = {
+      'New': t('searchFilters.conditions.new'),
+      'Like New': t('searchFilters.conditions.likeNew'),
+      'Good': t('searchFilters.conditions.good'),
+      'Fair': t('searchFilters.conditions.fair'),
+      'Used': t('searchFilters.conditions.used')
+    };
+    return conditionMap[condition] || condition;
+  };
+
   return (
     <ScrollArea className="h-full">
       <div className="pr-4 space-y-6">
@@ -46,7 +71,7 @@ export default function SearchFilters({ onFiltersChange }: SearchFiltersProps) {
             onClick={() => toggleSection('category')}
             className="flex items-center justify-between w-full mb-3"
           >
-            <h3 className="font-semibold text-foreground">Category</h3>
+            <h3 className="font-semibold text-foreground">{t('searchFilters.category')}</h3>
             <ChevronDown
               className={`w-4 h-4 transition-transform ${
                 expandedSections.category ? '' : '-rotate-90'
@@ -70,7 +95,7 @@ export default function SearchFilters({ onFiltersChange }: SearchFiltersProps) {
                     className="rounded"
                   />
                   <Label htmlFor={`cat-${cat}`} className="text-sm cursor-pointer">
-                    {cat}
+                    {getCategoryTranslation(cat)}
                   </Label>
                 </div>
               ))}
@@ -84,7 +109,7 @@ export default function SearchFilters({ onFiltersChange }: SearchFiltersProps) {
             onClick={() => toggleSection('condition')}
             className="flex items-center justify-between w-full mb-3"
           >
-            <h3 className="font-semibold text-foreground">Condition</h3>
+            <h3 className="font-semibold text-foreground">{t('searchFilters.condition')}</h3>
             <ChevronDown
               className={`w-4 h-4 transition-transform ${
                 expandedSections.condition ? '' : '-rotate-90'
@@ -108,7 +133,7 @@ export default function SearchFilters({ onFiltersChange }: SearchFiltersProps) {
                     className="rounded"
                   />
                   <Label htmlFor={`cond-${cond}`} className="text-sm cursor-pointer">
-                    {cond}
+                    {getConditionTranslation(cond)}
                   </Label>
                 </div>
               ))}
@@ -122,7 +147,7 @@ export default function SearchFilters({ onFiltersChange }: SearchFiltersProps) {
             onClick={() => toggleSection('distance')}
             className="flex items-center justify-between w-full mb-3"
           >
-            <h3 className="font-semibold text-foreground">Distance</h3>
+            <h3 className="font-semibold text-foreground">{t('searchFilters.distance')}</h3>
             <ChevronDown
               className={`w-4 h-4 transition-transform ${
                 expandedSections.distance ? '' : '-rotate-90'
@@ -141,7 +166,7 @@ export default function SearchFilters({ onFiltersChange }: SearchFiltersProps) {
                 step={5}
                 className="w-full"
               />
-              <p className="text-sm text-muted-foreground">Within {filters.distance} km</p>
+              <p className="text-sm text-muted-foreground">Dans un rayon de {filters.distance} km</p>
             </div>
           )}
         </div>
@@ -152,7 +177,7 @@ export default function SearchFilters({ onFiltersChange }: SearchFiltersProps) {
             onClick={() => toggleSection('rating')}
             className="flex items-center justify-between w-full mb-3"
           >
-            <h3 className="font-semibold text-foreground">User Rating</h3>
+            <h3 className="font-semibold text-foreground">{t('searchFilters.userRating')}</h3>
             <ChevronDown
               className={`w-4 h-4 transition-transform ${
                 expandedSections.rating ? '' : '-rotate-90'
@@ -177,7 +202,7 @@ export default function SearchFilters({ onFiltersChange }: SearchFiltersProps) {
                     {Array.from({ length: rating }).map((_, i) => (
                       <span key={i} className="text-yellow-400">★</span>
                     ))}
-                    {rating > 0 && <span className="text-muted-foreground">& up</span>}
+                    {rating > 0 && <span className="text-muted-foreground">{t('searchFilters.andUp')}</span>}
                   </Label>
                 </div>
               ))}

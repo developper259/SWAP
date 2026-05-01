@@ -3,16 +3,18 @@
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Shirt, Laptop, Home, Book } from 'lucide-react';
-
-const categories = [
-  { id: 'fashion', label: 'Fashion', icon: Shirt },
-  { id: 'tech', label: 'Tech', icon: Laptop },
-  { id: 'home', label: 'Home', icon: Home },
-  { id: 'books', label: 'Books', icon: Book },
-];
+import { useLanguage } from '@/lib/language-context';
 
 export default function CategoryFilter() {
+  const { t } = useLanguage();
   const [activeCategory, setActiveCategory] = useState('fashion');
+
+  const categories = [
+    { id: 'fashion', label: t('categories.fashion'), icon: Shirt },
+    { id: 'tech', label: t('categories.tech'), icon: Laptop },
+    { id: 'home', label: t('categories.home'), icon: Home },
+    { id: 'books', label: t('categories.books'), icon: Book },
+  ];
 
   return (
     <section className="max-w-7xl mx-auto px-4 py-8 border-b border-border">

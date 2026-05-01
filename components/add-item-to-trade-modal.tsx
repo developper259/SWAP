@@ -12,6 +12,7 @@ import {
   DialogFooter,
 } from '@/components/ui/dialog';
 import { Badge } from '@/components/ui/badge';
+import { useLanguage } from '@/lib/language-context';
 
 interface InventoryItem {
   id: string;
@@ -46,6 +47,7 @@ export default function AddItemToTradeModal({
   onConfirm,
   currentlySelected = [],
 }: AddItemToTradeModalProps) {
+  const { t } = useLanguage();
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedItems, setSelectedItems] = useState<string[]>(currentlySelected);
 
@@ -77,10 +79,10 @@ export default function AddItemToTradeModal({
       <DialogContent className="max-w-md rounded-2xl p-0 overflow-hidden">
         <DialogHeader className="p-6 pb-4 border-b border-border">
           <DialogTitle className="text-xl font-bold text-foreground">
-            Add Items to Trade
+            {t('addItemToTradeModal.title')}
           </DialogTitle>
           <p className="text-sm text-muted-foreground mt-1">
-            Select items from your inventory to include in this trade
+            {t('addItemToTradeModal.subtitle')}
           </p>
         </DialogHeader>
 
@@ -89,7 +91,7 @@ export default function AddItemToTradeModal({
           <div className="relative">
             <Search className="absolute left-3 top-2.5 w-4 h-4 text-muted-foreground" />
             <Input
-              placeholder="Search your inventory..."
+              placeholder={t('addItemToTradeModal.searchInventory')}
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               className="pl-9 rounded-lg bg-secondary border-0"
@@ -101,7 +103,7 @@ export default function AddItemToTradeModal({
         {selectedItems.length > 0 && (
           <div className="px-6 py-2 bg-primary/5 border-b border-border flex items-center justify-between">
             <span className="text-sm text-primary font-medium">
-              {selectedItems.length} item{selectedItems.length !== 1 ? 's' : ''} selected
+              {selectedItems.length} {selectedItems.length === 1 ? t('addItemToTradeModal.item') : t('addItemToTradeModal.items')}
             </span>
             <Button
               variant="ghost"
@@ -109,7 +111,7 @@ export default function AddItemToTradeModal({
               onClick={handleClear}
               className="text-muted-foreground hover:text-foreground h-auto py-1 px-2"
             >
-              Clear all
+              {t('addItemToTradeModal.clear')} {t('addItemToTradeModal.all')}
             </Button>
           </div>
         )}
@@ -118,7 +120,7 @@ export default function AddItemToTradeModal({
         <div className="p-4 max-h-80 overflow-y-auto">
           {filteredItems.length === 0 ? (
             <div className="text-center py-8">
-              <p className="text-muted-foreground">No items found</p>
+              <p className="text-muted-foreground">{t('addItemToTradeModal.noItemsFound')}</p>
             </div>
           ) : (
             <div className="grid grid-cols-3 gap-3">
@@ -174,14 +176,14 @@ export default function AddItemToTradeModal({
               onClick={() => onOpenChange(false)}
               className="flex-1 rounded-lg border-border"
             >
-              Cancel
+              {t('addItemToTradeModal.cancel')}
             </Button>
             <Button
               onClick={handleConfirm}
               disabled={selectedItems.length === 0}
               className="flex-1 rounded-lg bg-primary hover:bg-primary/90 text-primary-foreground disabled:opacity-50"
             >
-              Add {selectedItems.length > 0 ? `(${selectedItems.length})` : ''}
+              {t('addItemToTradeModal.add')} {selectedItems.length > 0 ? `(${selectedItems.length})` : ''}
             </Button>
           </div>
         </DialogFooter>

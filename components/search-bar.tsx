@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { useRouter } from 'next/navigation';
 import { Search, Command } from 'lucide-react';
+import { useLanguage } from '@/lib/language-context';
 
 interface SuggestedItem {
   id: string;
@@ -20,6 +21,7 @@ const SUGGESTED_ITEMS: SuggestedItem[] = [
 ];
 
 export default function SearchBar() {
+  const { t } = useLanguage();
   const [query, setQuery] = useState('');
   const [isOpen, setIsOpen] = useState(false);
   const [filteredItems, setFilteredItems] = useState<SuggestedItem[]>([]);
@@ -121,7 +123,7 @@ export default function SearchBar() {
             onFocus={() => setIsOpen(true)}
             onBlur={() => setTimeout(() => setIsOpen(false), 200)}
             onKeyDown={handleKeyDown}
-            placeholder="Search items..."
+            placeholder={t('searchBar.placeholder')}
             className="w-full pl-9 pr-16 h-10 rounded-xl bg-secondary text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all"
           />
           <div className="absolute right-3 top-1/2 -translate-y-1/2 flex items-center gap-1 text-xs text-muted-foreground pointer-events-none">
@@ -138,7 +140,7 @@ export default function SearchBar() {
           onMouseLeave={() => setHighlightedIndex(-1)}
         >
           <div className="p-2">
-            <p className="text-xs text-muted-foreground px-2 py-1 font-medium">Quick Results</p>
+            <p className="text-xs text-muted-foreground px-2 py-1 font-medium">{t('searchBar.quickResults')}</p>
             {filteredItems.map((item, index) => (
               <button
                 key={item.id}
@@ -162,7 +164,7 @@ export default function SearchBar() {
           </div>
           <div className="border-t border-border px-3 py-2 bg-secondary/30">
             <p className="text-xs text-muted-foreground">
-              Use <span className="font-medium">↑↓</span> to navigate, <span className="font-medium">Enter</span> to select
+              {t('searchBar.navigateInstructions')}
             </p>
           </div>
         </div>

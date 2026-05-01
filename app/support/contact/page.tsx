@@ -23,6 +23,7 @@ import {
 } from '@/components/ui/select';
 import { Badge } from '@/components/ui/badge';
 import { Alert, AlertDescription } from '@/components/ui/alert';
+import { useLanguage } from '@/lib/language-context';
 
 const INQUIRY_REASONS = [
   { value: 'general', label: 'General Inquiry' },
@@ -47,6 +48,30 @@ const RESPONSE_TIMES: Record<string, string> = {
 };
 
 export default function ContactPage() {
+  const { t } = useLanguage();
+
+  const INQUIRY_REASONS = [
+    { value: 'general', label: t('contact.reasons.general') },
+    { value: 'technical', label: t('contact.reasons.technical') },
+    { value: 'trade-dispute', label: t('contact.reasons.tradeDispute') },
+    { value: 'report-user', label: t('contact.reasons.reportUser') },
+    { value: 'billing', label: t('contact.reasons.billing') },
+    { value: 'feedback', label: t('contact.reasons.feedback') },
+    { value: 'partnership', label: t('contact.reasons.partnership') },
+    { value: 'other', label: t('contact.reasons.other') },
+  ];
+
+  const RESPONSE_TIMES: Record<string, string> = {
+    'general': t('contact.responseTimes.general'),
+    'technical': t('contact.responseTimes.technical'),
+    'trade-dispute': t('contact.responseTimes.tradeDispute'),
+    'report-user': t('contact.responseTimes.reportUser'),
+    'billing': t('contact.responseTimes.billing'),
+    'feedback': t('contact.responseTimes.feedback'),
+    'partnership': t('contact.responseTimes.partnership'),
+    'other': t('contact.responseTimes.other'),
+  };
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -113,9 +138,9 @@ export default function ContactPage() {
     <div className="space-y-8">
       {/* Page Header */}
       <div>
-        <h2 className="text-3xl font-bold text-foreground mb-2">Contact Us</h2>
+        <h2 className="text-3xl font-bold text-foreground mb-2">{t('contact.title')}</h2>
         <p className="text-lg text-muted-foreground">
-          We're here to help. Fill out the form below and we'll get back to you soon.
+          {t('contact.description')}
         </p>
       </div>
 
@@ -123,7 +148,7 @@ export default function ContactPage() {
       <div className="flex items-center gap-4">
         <div className="flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full">
           <Clock className="w-4 h-4" />
-          <span className="text-sm font-medium">Average response: 24 hours</span>
+          <span className="text-sm font-medium">{t('contact.info.responseTime')}</span>
         </div>
       </div>
 
@@ -136,11 +161,11 @@ export default function ContactPage() {
               <div className="space-y-2">
                 <label className="text-sm font-semibold text-foreground flex items-center gap-2">
                   <User className="w-4 h-4 text-muted-foreground" />
-                  Your Name
+                  {t('contact.form.name')}
                 </label>
                 <Input
                   type="text"
-                  placeholder="John Doe"
+                  placeholder={t('contact.form.namePlaceholder')}
                   value={formData.name}
                   onChange={(e) => handleInputChange('name', e.target.value)}
                   required
@@ -150,11 +175,11 @@ export default function ContactPage() {
               <div className="space-y-2">
                 <label className="text-sm font-semibold text-foreground flex items-center gap-2">
                   <Mail className="w-4 h-4 text-muted-foreground" />
-                  Email Address
+                  {t('contact.form.email')}
                 </label>
                 <Input
                   type="email"
-                  placeholder="john@example.com"
+                  placeholder={t('contact.form.emailPlaceholder')}
                   value={formData.email}
                   onChange={(e) => handleInputChange('email', e.target.value)}
                   required
@@ -167,14 +192,14 @@ export default function ContactPage() {
             <div className="space-y-2">
               <label className="text-sm font-semibold text-foreground flex items-center gap-2">
                 <FileText className="w-4 h-4 text-muted-foreground" />
-                Reason for Inquiry
+                {t('contact.form.reason')}
               </label>
               <Select
                 value={formData.reason}
                 onValueChange={(value) => handleInputChange('reason', value)}
               >
                 <SelectTrigger className="h-12 rounded-xl border-border bg-card">
-                  <SelectValue placeholder="Select a reason..." />
+                  <SelectValue placeholder={t('contact.form.reasonPlaceholder')} />
                 </SelectTrigger>
                 <SelectContent className="rounded-xl">
                   {INQUIRY_REASONS.map((reason) => (
@@ -188,7 +213,7 @@ export default function ContactPage() {
                 <div className="flex items-center gap-2 mt-2">
                   <Badge variant="secondary" className="rounded-lg bg-primary/10 text-primary">
                     <Clock className="w-3 h-3 mr-1" />
-                    Expected response: {expectedResponseTime}
+                    {t('contact.success.expectedResponse').replace('{{time}}', expectedResponseTime)}
                   </Badge>
                 </div>
               )}
@@ -197,11 +222,11 @@ export default function ContactPage() {
             {/* Subject */}
             <div className="space-y-2">
               <label className="text-sm font-semibold text-foreground">
-                Subject
+                {t('contact.form.subject')}
               </label>
               <Input
                 type="text"
-                placeholder="Brief summary of your inquiry"
+                placeholder={t('contact.form.subjectPlaceholder')}
                 value={formData.subject}
                 onChange={(e) => handleInputChange('subject', e.target.value)}
                 required
@@ -212,17 +237,17 @@ export default function ContactPage() {
             {/* Message */}
             <div className="space-y-2">
               <label className="text-sm font-semibold text-foreground">
-                Message
+                {t('contact.form.message')}
               </label>
               <Textarea
-                placeholder="Please describe your inquiry in detail. Include any relevant order numbers, usernames, or transaction details..."
+                placeholder={t('contact.form.messagePlaceholder')}
                 value={formData.message}
                 onChange={(e) => handleInputChange('message', e.target.value)}
                 required
                 className="min-h-[180px] rounded-xl border-border bg-card resize-none"
               />
               <p className="text-xs text-muted-foreground">
-                Minimum 50 characters ({formData.message.length}/50)
+                Minimum 50 caractères ({formData.message.length}/50)
               </p>
             </div>
 
@@ -235,12 +260,12 @@ export default function ContactPage() {
               {isSubmitting ? (
                 <>
                   <div className="w-4 h-4 border-2 border-primary-foreground/30 border-t-primary-foreground rounded-full animate-spin" />
-                  Sending...
+                  {t('contact.form.submitting')}
                 </>
               ) : (
                 <>
                   <Send className="w-4 h-4" />
-                  Send Message
+                  {t('contact.form.submit')}
                 </>
               )}
             </Button>
@@ -251,15 +276,15 @@ export default function ContactPage() {
         <div className="space-y-6">
           {/* Quick Info Card */}
           <div className="bg-card border border-border rounded-2xl p-6">
-            <h3 className="font-semibold text-foreground mb-4">Quick Info</h3>
+            <h3 className="font-semibold text-foreground mb-4">{t('contact.otherWays.title')}</h3>
             <div className="space-y-4">
               <div className="flex items-start gap-3">
                 <div className="w-8 h-8 bg-secondary rounded-lg flex items-center justify-center flex-shrink-0">
                   <Clock className="w-4 h-4 text-primary" />
                 </div>
                 <div>
-                  <p className="font-medium text-foreground text-sm">Response Time</p>
-                  <p className="text-xs text-muted-foreground">Usually within 24 hours</p>
+                  <p className="font-medium text-foreground text-sm">{t('contact.info.responseTime')}</p>
+                  <p className="text-xs text-muted-foreground">{t('contact.info.responseTime')}</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
@@ -267,8 +292,8 @@ export default function ContactPage() {
                   <MessageCircle className="w-4 h-4 text-primary" />
                 </div>
                 <div>
-                  <p className="font-medium text-foreground text-sm">Live Chat</p>
-                  <p className="text-xs text-muted-foreground">Available for Premium users</p>
+                  <p className="font-medium text-foreground text-sm">{t('contact.prioritySupport.title')}</p>
+                  <p className="text-xs text-muted-foreground">{t('contact.prioritySupport.description')}</p>
                 </div>
               </div>
             </div>
@@ -278,21 +303,21 @@ export default function ContactPage() {
           <Alert className="bg-amber-50 dark:bg-amber-900/20 border-amber-200 dark:border-amber-800">
             <AlertCircle className="w-4 h-4 text-amber-600 dark:text-amber-400" />
             <AlertDescription className="text-amber-800 dark:text-amber-200 text-sm">
-              <strong>Urgent trade dispute?</strong> Include the trade ID and both usernames for faster resolution.
+              <strong>{t('contact.prioritySupport.urgentDispute')}</strong> {t('contact.prioritySupport.urgentDisputeDesc')}
             </AlertDescription>
           </Alert>
 
           {/* FAQ Link */}
           <div className="bg-primary/5 border border-primary/20 rounded-2xl p-6">
-            <h3 className="font-semibold text-foreground mb-2">Check FAQ First</h3>
+            <h3 className="font-semibold text-foreground mb-2">{t('contact.otherWays.helpCenter.title')}</h3>
             <p className="text-sm text-muted-foreground mb-4">
-              Many common questions are answered in our Help Center.
+              {t('contact.otherWays.helpCenter.description')}
             </p>
             <a
               href="/support/faq"
               className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:underline"
             >
-              Browse FAQ
+              {t('contact.otherWays.helpCenter.browse')}
               <MessageCircle className="w-4 h-4" />
             </a>
           </div>

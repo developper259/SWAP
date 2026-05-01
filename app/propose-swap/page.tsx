@@ -8,6 +8,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Checkbox } from '@/components/ui/checkbox';
+import { useLanguage } from '@/lib/language-context';
 
 interface TradeItem {
   id: string;
@@ -34,13 +35,14 @@ const TRADER_INFO = {
 };
 
 export default function ProposeExchangePage() {
+  const { t } = useLanguage();
   const router = useRouter();
   const [agreedToTerms, setAgreedToTerms] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleConfirmProposal = () => {
     if (!agreedToTerms) {
-      alert('Please agree to the trading terms to continue');
+      alert(t('proposeSwapPage.pleaseAgreeTerms'));
       return;
     }
     
@@ -49,7 +51,7 @@ export default function ProposeExchangePage() {
     // Simulate API call
     setTimeout(() => {
       console.log('[v0] Proposal confirmed');
-      alert('Trade proposal sent successfully!');
+      alert(t('proposeSwapPage.proposalSent'));
       router.push('/chat');
     }, 1000);
   };
@@ -64,15 +66,15 @@ export default function ProposeExchangePage() {
             className="gap-2 rounded-lg border-border text-foreground hover:bg-secondary"
           >
             <ArrowLeft className="w-4 h-4" />
-            Back to Chat
+            {t('proposeSwapPage.backToChat')}
           </Button>
         </Link>
 
         {/* Header */}
         <div className="text-center mb-10">
-          <h1 className="text-3xl font-bold text-foreground mb-2">Review Your Trade</h1>
+          <h1 className="text-3xl font-bold text-foreground mb-2">{t('proposeSwapPage.title')}</h1>
           <p className="text-muted-foreground">
-            Please review the items before confirming your proposal
+            {t('proposeSwapPage.subtitle')}
           </p>
         </div>
 
@@ -83,7 +85,7 @@ export default function ProposeExchangePage() {
             <div className="bg-secondary/50 px-6 py-4 border-b border-border">
               <h2 className="font-semibold text-foreground flex items-center gap-2">
                 <ArrowRight className="w-4 h-4 text-destructive" />
-                What You Give
+                {t('proposeSwapPage.whatYouGive')}
               </h2>
             </div>
             <CardContent className="p-6 space-y-4">
@@ -108,7 +110,7 @@ export default function ProposeExchangePage() {
               
               {YOUR_ITEMS.length === 0 && (
                 <div className="text-center py-8 text-muted-foreground">
-                  <p>No items selected</p>
+                  <p>{t('proposeSwapPage.noItemsSelected')}</p>
                 </div>
               )}
             </CardContent>
@@ -119,7 +121,7 @@ export default function ProposeExchangePage() {
             <div className="bg-primary/5 px-6 py-4 border-b border-border">
               <h2 className="font-semibold text-foreground flex items-center gap-2">
                 <ArrowLeft className="w-4 h-4 text-primary" />
-                What You Receive
+                {t('proposeSwapPage.whatYouReceive')}
               </h2>
             </div>
             <CardContent className="p-6 space-y-4">
@@ -144,7 +146,7 @@ export default function ProposeExchangePage() {
               
               {THEIR_ITEMS.length === 0 && (
                 <div className="text-center py-8 text-muted-foreground">
-                  <p>No items from trader</p>
+                  <p>{t('proposeSwapPage.noItemsFromTrader')}</p>
                 </div>
               )}
             </CardContent>
@@ -154,7 +156,7 @@ export default function ProposeExchangePage() {
         {/* Trading With Card */}
         <Card className="rounded-2xl border-border mb-8">
           <CardContent className="p-6">
-            <h3 className="text-sm font-semibold text-muted-foreground mb-4">TRADING WITH</h3>
+            <h3 className="text-sm font-semibold text-muted-foreground mb-4">{t('proposeSwapPage.tradingWith')}</h3>
             <div className="flex items-center gap-4">
               <div className="w-14 h-14 bg-secondary rounded-full flex items-center justify-center text-2xl">
                 {TRADER_INFO.avatar}
@@ -165,13 +167,13 @@ export default function ProposeExchangePage() {
                   <span className="flex items-center gap-1">
                     <span className="text-amber-500">★</span> {TRADER_INFO.rating}
                   </span>
-                  <span>{TRADER_INFO.trades} trades</span>
-                  <span>Member since {TRADER_INFO.memberSince}</span>
+                  <span>{TRADER_INFO.trades} {t('proposeSwapPage.trades')}</span>
+                  <span>{t('proposeSwapPage.memberSince')} {TRADER_INFO.memberSince}</span>
                 </div>
               </div>
               <Link href={`/profile?id=u1`}>
                 <Button variant="outline" size="sm" className="rounded-lg">
-                  View Profile
+                  {t('proposeSwapPage.viewProfile')}
                 </Button>
               </Link>
             </div>
@@ -184,19 +186,19 @@ export default function ProposeExchangePage() {
             <div className="flex gap-4">
               <Shield className="w-6 h-6 text-primary shrink-0 mt-0.5" />
               <div>
-                <h3 className="font-semibold text-foreground mb-2">Trade Safely</h3>
+                <h3 className="font-semibold text-foreground mb-2">{t('proposeSwapPage.tradeSafely')}</h3>
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex items-start gap-2">
                     <CheckCircle className="w-4 h-4 text-primary shrink-0 mt-0.5" />
-                    <span>Meet in a public place to exchange items</span>
+                    <span>{t('proposeSwapPage.safetyTip1')}</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle className="w-4 h-4 text-primary shrink-0 mt-0.5" />
-                    <span>Inspect items thoroughly before completing the trade</span>
+                    <span>{t('proposeSwapPage.safetyTip2')}</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle className="w-4 h-4 text-primary shrink-0 mt-0.5" />
-                    <span>Use Swap messaging for all communication</span>
+                    <span>{t('proposeSwapPage.safetyTip3')}</span>
                   </li>
                 </ul>
               </div>
@@ -213,14 +215,14 @@ export default function ProposeExchangePage() {
             className="mt-0.5"
           />
           <label htmlFor="terms" className="text-sm text-foreground cursor-pointer">
-            I understand that this proposal is not final until the other party accepts. 
-            I agree to the{' '}
+            Je comprends que cette proposition n'est pas finale tant que l'autre partie ne l'accepte pas. 
+            J'accepte les{' '}
             <Link href="/terms" className="text-primary hover:underline">
-              Trading Terms
+              {t('proposeSwapPage.tradingTerms')}
             </Link>{' '}
-            and{' '}
+            et{' '}
             <Link href="/safety" className="text-primary hover:underline">
-              Safety Guidelines
+              {t('proposeSwapPage.safetyGuidelines')}
             </Link>
             .
           </label>
@@ -233,7 +235,7 @@ export default function ProposeExchangePage() {
               variant="outline"
               className="w-full rounded-xl border-border text-foreground hover:bg-secondary h-12"
             >
-              Modify Offer
+              {t('proposeSwapPage.modifyOffer')}
             </Button>
           </Link>
           <Button
@@ -243,12 +245,12 @@ export default function ProposeExchangePage() {
           >
             {isSubmitting ? (
               <>
-                <span className="animate-pulse">Sending...</span>
+                <span className="animate-pulse">{t('proposeSwapPage.sending')}</span>
               </>
             ) : (
               <>
                 <CheckCircle className="w-5 h-5 mr-2" />
-                Confirm Proposal
+                {t('proposeSwapPage.confirmProposal')}
               </>
             )}
           </Button>
@@ -258,8 +260,7 @@ export default function ProposeExchangePage() {
         <div className="mt-6 flex items-start gap-2 text-xs text-muted-foreground">
           <AlertCircle className="w-4 h-4 shrink-0 mt-0.5" />
           <p>
-            Once sent, the other party will have 48 hours to respond to your proposal.
-            You can withdraw your proposal at any time before it is accepted.
+            {t('proposeSwapPage.warningNote')}
           </p>
         </div>
       </div>

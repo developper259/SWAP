@@ -11,6 +11,7 @@ import {
 } from '@/components/ui/accordion';
 import { Badge } from '@/components/ui/badge';
 import { cn } from '@/lib/utils';
+import { useLanguage } from '@/lib/language-context';
 
 interface FAQItem {
   question: string;
@@ -127,7 +128,111 @@ const FAQ_DATA: FAQCategory[] = [
 ];
 
 export default function FAQPage() {
+  const { t } = useLanguage();
   const [searchQuery, setSearchQuery] = useState('');
+
+  const FAQ_DATA = [
+    {
+      name: t('faq.categories.shipping'),
+      icon: '📦',
+      items: [
+        {
+          question: t('faq.shipping.howItWorks.question'),
+          answer: t('faq.shipping.howItWorks.answer'),
+        },
+        {
+          question: t('faq.shipping.whoPays.question'),
+          answer: t('faq.shipping.whoPays.answer'),
+        },
+        {
+          question: t('faq.shipping.damaged.question'),
+          answer: t('faq.shipping.damaged.answer'),
+        },
+        {
+          question: t('faq.shipping.international.question'),
+          answer: t('faq.shipping.international.answer'),
+        },
+        {
+          question: t('faq.shipping.timeline.question'),
+          answer: t('faq.shipping.timeline.answer'),
+        },
+      ],
+    },
+    {
+      name: t('faq.categories.trading'),
+      icon: '🔄',
+      items: [
+        {
+          question: t('faq.trading.howItWorks.question'),
+          answer: t('faq.trading.howItWorks.answer'),
+        },
+        {
+          question: t('faq.trading.safety.question'),
+          answer: t('faq.trading.safety.answer'),
+        },
+        {
+          question: t('faq.trading.disputes.question'),
+          answer: t('faq.trading.disputes.answer'),
+        },
+        {
+          question: t('faq.trading.misrepresentation.question'),
+          answer: t('faq.trading.misrepresentation.answer'),
+        },
+        {
+          question: t('faq.trading.fees.question'),
+          answer: t('faq.trading.fees.answer'),
+        },
+      ],
+    },
+    {
+      name: t('faq.categories.account'),
+      icon: '👤',
+      items: [
+        {
+          question: t('faq.account.create.question'),
+          answer: t('faq.account.create.answer'),
+        },
+        {
+          question: t('faq.account.editProfile.question'),
+          answer: t('faq.account.editProfile.answer'),
+        },
+        {
+          question: t('faq.account.delete.question'),
+          answer: t('faq.account.delete.answer'),
+        },
+        {
+          question: t('faq.account.verification.question'),
+          answer: t('faq.account.verification.answer'),
+        },
+        {
+          question: t('faq.account.changePassword.question'),
+          answer: t('faq.account.changePassword.answer'),
+        },
+        {
+          question: t('faq.account.blockUser.question'),
+          answer: t('faq.account.blockUser.answer'),
+        },
+      ],
+    },
+    {
+      name: t('faq.categories.premium'),
+      icon: '⭐',
+      items: [
+        {
+          question: t('faq.pricing.free.question'),
+          answer: t('faq.pricing.free.answer'),
+        },
+        {
+          question: t('faq.pricing.features.question'),
+          answer: t('faq.pricing.features.answer'),
+        },
+        {
+          question: t('faq.pricing.cancel.question'),
+          answer: t('faq.pricing.cancel.answer'),
+        },
+      ],
+    },
+  ];
 
   const filteredData = useMemo(() => {
     if (!searchQuery.trim()) return FAQ_DATA;
@@ -141,7 +246,7 @@ export default function FAQPage() {
           item.answer.toLowerCase().includes(query)
       ),
     })).filter(category => category.items.length > 0);
-  }, [searchQuery]);
+  }, [searchQuery, FAQ_DATA]);
 
   const totalResults = filteredData.reduce((acc, cat) => acc + cat.items.length, 0);
 

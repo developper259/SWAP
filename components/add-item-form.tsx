@@ -13,12 +13,14 @@ import {
 } from '@/components/ui/select';
 import { Upload, X, CheckCircle2 } from 'lucide-react';
 import { ToggleGroup, ToggleGroupItem } from '@/components/ui/toggle-group';
+import { useLanguage } from '@/lib/language-context';
 
 interface AddItemFormProps {
   onStepChange?: (step: number) => void;
 }
 
 export default function AddItemForm({ onStepChange }: AddItemFormProps) {
+  const { t } = useLanguage();
   const [currentStep, setCurrentStep] = useState(1);
   const [images, setImages] = useState<string[]>([]);
   const [primaryImageIndex, setPrimaryImageIndex] = useState(0);
@@ -60,7 +62,7 @@ export default function AddItemForm({ onStepChange }: AddItemFormProps) {
 
   const handleNextStep = () => {
     if (currentStep === 1 && images.length === 0) {
-      alert('Please upload at least one image');
+      alert(t('addItemForm.pleaseUploadImage'));
       return;
     }
     if (currentStep < 3) {
@@ -78,13 +80,13 @@ export default function AddItemForm({ onStepChange }: AddItemFormProps) {
 
   const handleSubmit = () => {
     console.log('[v0] Form data:', formData);
-    alert('Item listed successfully!');
+    alert(t('addItemForm.itemListedSuccessfully'));
   };
 
   const steps = [
-    { number: 1, label: 'Photos' },
-    { number: 2, label: 'Details' },
-    { number: 3, label: 'Preferences' },
+    { number: 1, label: t('addItemForm.step1') },
+    { number: 2, label: t('addItemForm.step2') },
+    { number: 3, label: t('addItemForm.step3') },
   ];
 
   return (
@@ -130,8 +132,8 @@ export default function AddItemForm({ onStepChange }: AddItemFormProps) {
       {currentStep === 1 && (
         <div className="space-y-6">
           <div>
-            <h2 className="text-2xl font-bold text-foreground mb-2">Upload Photos</h2>
-            <p className="text-muted-foreground">Add clear, well-lit photos of your item</p>
+            <h2 className="text-2xl font-bold text-foreground mb-2">{t('addItemForm.uploadPhotos')}</h2>
+            <p className="text-muted-foreground">{t('addItemForm.uploadPhotosDescription')}</p>
           </div>
 
           {/* Drag and Drop Area */}
@@ -139,8 +141,8 @@ export default function AddItemForm({ onStepChange }: AddItemFormProps) {
             <div className="flex flex-col items-center justify-center gap-3">
               <Upload className="w-8 h-8 text-muted-foreground" />
               <div className="text-center">
-                <p className="font-semibold text-foreground">Click to upload or drag and drop</p>
-                <p className="text-sm text-muted-foreground">PNG, JPG, GIF up to 10MB</p>
+                <p className="font-semibold text-foreground">{t('addItemForm.clickToUpload')}</p>
+                <p className="text-sm text-muted-foreground">{t('addItemForm.fileTypes')}</p>
               </div>
             </div>
             <input
@@ -156,7 +158,7 @@ export default function AddItemForm({ onStepChange }: AddItemFormProps) {
           {images.length > 0 && (
             <div className="space-y-3">
               <p className="text-sm font-semibold text-foreground">
-                {images.length} photo{images.length !== 1 ? 's' : ''} uploaded
+                {images.length} {t('addItemForm.photo')}{images.length !== 1 ? t('addItemForm.photos_plural') : ''} {t('addItemForm.uploaded')}
               </p>
               <div className="grid grid-cols-3 gap-3">
                 {images.map((image, idx) => (
@@ -181,7 +183,7 @@ export default function AddItemForm({ onStepChange }: AddItemFormProps) {
                     </button>
                     {primaryImageIndex === idx && (
                       <div className="absolute inset-0 bg-black/20 flex items-center justify-center">
-                        <span className="text-white text-xs font-semibold">Primary</span>
+                        <span className="text-white text-xs font-semibold">{t('addItemForm.primary')}</span>
                       </div>
                     )}
                   </div>
@@ -196,17 +198,17 @@ export default function AddItemForm({ onStepChange }: AddItemFormProps) {
       {currentStep === 2 && (
         <div className="space-y-6">
           <div>
-            <h2 className="text-2xl font-bold text-foreground mb-2">Item Details</h2>
-            <p className="text-muted-foreground">Tell us about your item</p>
+            <h2 className="text-2xl font-bold text-foreground mb-2">{t('addItemForm.itemDetails')}</h2>
+            <p className="text-muted-foreground">{t('addItemForm.itemDetailsDescription')}</p>
           </div>
 
           {/* Title */}
           <div>
             <label className="text-sm font-semibold text-foreground mb-2 block">
-              Title
+              {t('addItemForm.title')}
             </label>
             <Input
-              placeholder="e.g., Vintage Leather Jacket"
+              placeholder={t('addItemForm.titlePlaceholder')}
               value={formData.title}
               onChange={(e) => handleFormChange('title', e.target.value)}
               className="rounded-lg border-border"
@@ -216,10 +218,10 @@ export default function AddItemForm({ onStepChange }: AddItemFormProps) {
           {/* Description */}
           <div>
             <label className="text-sm font-semibold text-foreground mb-2 block">
-              Description
+              {t('addItemForm.description')}
             </label>
             <Textarea
-              placeholder="Describe your item in detail..."
+              placeholder={t('addItemForm.descriptionPlaceholder')}
               value={formData.description}
               onChange={(e) => handleFormChange('description', e.target.value)}
               className="rounded-lg border-border min-h-24"
@@ -230,25 +232,25 @@ export default function AddItemForm({ onStepChange }: AddItemFormProps) {
           <div className="grid grid-cols-2 gap-4">
             <div>
               <label className="text-sm font-semibold text-foreground mb-2 block">
-                Category
+                {t('addItemForm.category')}
               </label>
               <Select value={formData.category} onValueChange={(val) => handleFormChange('category', val)}>
                 <SelectTrigger className="rounded-lg border-border">
-                  <SelectValue placeholder="Select category" />
+                  <SelectValue placeholder={t('addItemForm.selectCategory')} />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="fashion">Fashion</SelectItem>
-                  <SelectItem value="electronics">Electronics</SelectItem>
-                  <SelectItem value="home">Home</SelectItem>
-                  <SelectItem value="books">Books</SelectItem>
-                  <SelectItem value="sports">Sports</SelectItem>
+                  <SelectItem value="fashion">{t('categories.fashion')}</SelectItem>
+                  <SelectItem value="electronics">{t('categories.electronics')}</SelectItem>
+                  <SelectItem value="home">{t('categories.home')}</SelectItem>
+                  <SelectItem value="books">{t('categories.books')}</SelectItem>
+                  <SelectItem value="sports">{t('categories.sports')}</SelectItem>
                 </SelectContent>
               </Select>
             </div>
 
             <div>
               <label className="text-sm font-semibold text-foreground mb-2 block">
-                Condition
+                {t('addItemForm.condition')}
               </label>
               <ToggleGroup
                 type="single"
@@ -256,13 +258,13 @@ export default function AddItemForm({ onStepChange }: AddItemFormProps) {
                 onValueChange={(val) => handleFormChange('condition', val)}
               >
                 <ToggleGroupItem value="new" className="rounded text-xs">
-                  New
+                  {t('itemCard.condition.new')}
                 </ToggleGroupItem>
                 <ToggleGroupItem value="good" className="rounded text-xs">
-                  Good
+                  {t('itemCard.condition.good')}
                 </ToggleGroupItem>
                 <ToggleGroupItem value="used" className="rounded text-xs">
-                  Used
+                  {t('itemCard.condition.used')}
                 </ToggleGroupItem>
               </ToggleGroup>
             </div>
@@ -274,14 +276,14 @@ export default function AddItemForm({ onStepChange }: AddItemFormProps) {
       {currentStep === 3 && (
         <div className="space-y-6">
           <div>
-            <h2 className="text-2xl font-bold text-foreground mb-2">What do you want?</h2>
-            <p className="text-muted-foreground">Specify what you're looking for in exchange</p>
+            <h2 className="text-2xl font-bold text-foreground mb-2">{t('addItemForm.wantInExchange')}</h2>
+            <p className="text-muted-foreground">{t('addItemForm.wantInExchange')}</p>
           </div>
 
           {/* Want in Exchange */}
           <div>
             <label className="text-sm font-semibold text-foreground mb-2 block">
-              What I want in exchange
+              {t('addItemForm.wantInExchange')}
             </label>
             <Textarea
               placeholder="e.g., Vintage cameras, designer bags, vintage watches..."
@@ -294,11 +296,11 @@ export default function AddItemForm({ onStepChange }: AddItemFormProps) {
           {/* Location */}
           <div>
             <label className="text-sm font-semibold text-foreground mb-2 block">
-              Location
+              {t('addItemForm.location')}
             </label>
             <div className="flex gap-2">
               <Input
-                placeholder="e.g., Portland, OR"
+                placeholder={t('addItemForm.locationPlaceholder')}
                 value={formData.location}
                 onChange={(e) => handleFormChange('location', e.target.value)}
                 className="rounded-lg border-border flex-1"
@@ -307,7 +309,7 @@ export default function AddItemForm({ onStepChange }: AddItemFormProps) {
                 variant="outline"
                 className="rounded-lg border-border text-foreground hover:bg-secondary"
               >
-                Use Current
+                {t('addItemForm.useCurrent')}
               </Button>
             </div>
           </div>
@@ -315,7 +317,7 @@ export default function AddItemForm({ onStepChange }: AddItemFormProps) {
           {/* Preview Notice */}
           <div className="bg-secondary/50 border border-secondary rounded-lg p-4">
             <p className="text-sm text-foreground">
-              Review your listing before publishing. You can edit it anytime.
+              {t('addItemForm.reviewNotice')}
             </p>
           </div>
         </div>
@@ -329,7 +331,7 @@ export default function AddItemForm({ onStepChange }: AddItemFormProps) {
           disabled={currentStep === 1}
           className="rounded-lg border-border text-foreground hover:bg-secondary disabled:opacity-50"
         >
-          Previous
+          {t('addItemForm.previous')}
         </Button>
 
         {currentStep < 3 ? (
@@ -337,14 +339,14 @@ export default function AddItemForm({ onStepChange }: AddItemFormProps) {
             onClick={handleNextStep}
             className="flex-1 rounded-lg bg-primary hover:bg-primary/90 text-primary-foreground"
           >
-            Next
+            {t('addItemForm.next')}
           </Button>
         ) : (
           <Button
             onClick={handleSubmit}
             className="flex-1 rounded-lg bg-primary hover:bg-primary/90 text-primary-foreground"
           >
-            Publish Item
+            {t('addItemForm.publishItem')}
           </Button>
         )}
       </div>

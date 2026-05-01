@@ -1,0 +1,814 @@
+{
+  "common": {
+    "buttons": {
+      "save": "Save",
+      "cancel": "Cancel",
+      "confirm": "Confirm",
+      "back": "Back",
+      "next": "Next",
+      "previous": "Previous",
+      "send": "Send",
+      "edit": "Edit",
+      "delete": "Delete",
+      "add": "Add",
+      "search": "Search",
+      "filter": "Filter",
+      "close": "Close",
+      "view": "View",
+      "message": "Message",
+      "offer": "Offer",
+      "swap": "Swap",
+      "trade": "Trade",
+      "submit": "Submit",
+      "submitting": "Submitting..."
+    },
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "required": "Required",
+    "optional": "Optional",
+    "itemDeleted": "Item deleted",
+    "itemMarkedAsSwapped": "Item marked as swapped!",
+    "itemUpdatedSuccessfully": "Item updated successfully!",
+    "online": "Online",
+    "offline": "Offline",
+    "noResults": "No results found",
+    "noItems": "No items",
+    "noTrades": "No active trades",
+    "noMessages": "No messages",
+    "noReviews": "No reviews"
+  },
+  "navigation": {
+    "home": "Home",
+    "browse": "Browse",
+    "dashboard": "Dashboard",
+    "messages": "Messages",
+    "profile": "Profile",
+    "settings": "Settings",
+    "logout": "Logout"
+  },
+  "navbar": {
+    "listItem": "List an item"
+  },
+  "auth": {
+    "signIn": "Sign In",
+    "signUp": "Sign Up",
+    "email": "Email",
+    "password": "Password",
+    "forgotPassword": "Forgot password?",
+    "rememberMe": "Remember me"
+  },
+  "conditions": {
+    "new": "New",
+    "likeNew": "Like New",
+    "excellent": "Excellent",
+    "good": "Good",
+    "fair": "Fair",
+    "used": "Used",
+    "mint": "Mint",
+    "poor": "Poor"
+  },
+  "categories": {
+    "fashion": "Fashion",
+    "electronics": "Electronics",
+    "home": "Home",
+    "books": "Books",
+    "sports": "Sports",
+    "tech": "Technology",
+    "art": "Art",
+    "accessories": "Accessories",
+    "music": "Music"
+  },
+  "home": {
+    "title": "Trade instead of buying",
+    "subtitle": "Swap items you no longer need with people in your community. Sustainable, affordable, and fun.",
+    "startTrading": "Start Trading",
+    "learnHow": "Learn how it works",
+    "itemsListed": "Items listed",
+    "activeTraders": "Active traders"
+  },
+  "footer": {
+    "tagline": "Swap sustainably, live better.",
+    "browse": "Browse",
+    "support": "Support",
+    "legal": "Legal",
+    "home": "Home",
+    "homeCategory": "Home",
+    "fashion": "Fashion",
+    "electronics": "Electronics",
+    "helpCenter": "Help Center",
+    "safetyTips": "Safety Tips",
+    "contact": "Contact",
+    "terms": "Terms",
+    "privacy": "Privacy",
+    "cookies": "Cookies",
+    "copyright": "© 2026 Swap. All rights reserved."
+  },
+  "dashboard": {
+    "welcome": "Welcome",
+    "welcomeBack": "Welcome back, Alex",
+    "myWardrobe": "My Wardrobe",
+    "activeTrades": "Active Trades",
+    "reviews": "Reviews",
+    "addItem": "Add an item",
+    "manageTradesItems": "Manage your trades and items",
+    "successfulSwaps": "Successful swaps",
+    "itemsListed": "Items listed",
+    "averageRating": "Average rating",
+    "co2Saved": "CO₂ saved",
+    "addNewItem": "Add a new item",
+    "markAsSwapped": "Mark as swapped"
+  },
+  "dashboardSidebar": {
+    "myWardrobe": "My Wardrobe",
+    "activeSwap": "Active Trades",
+    "reviews": "Reviews",
+    "settings": "Settings",
+    "memberSince": "Member since {{year}}",
+    "signOut": "Sign out"
+  },
+  "browsePage": {
+    "searchPlaceholder": "Search items...",
+    "quickResults": "Quick results",
+    "useArrows": "Use ↑↓ to navigate, Enter to select",
+    "closeFilters": "Close filters",
+    "showFilters": "Show filters",
+    "filters": "Filters",
+    "clearFilters": "Clear filters",
+    "sortBy": "Sort by",
+    "sortOptions": {
+      "newest": "Newest",
+      "closest": "Closest",
+      "popular": "Popular",
+      "rating": "Top rated"
+    },
+    "activeFilters": "Active filters",
+    "clearAll": "Clear all"
+  },
+  "searchBar": {
+    "placeholder": "Search items...",
+    "quickResults": "Quick results",
+    "navigateInstructions": "Use ↑↓ to navigate, Enter to select"
+  },
+  "searchFilters": {
+    "category": "Category",
+    "condition": "Condition",
+    "distance": "Distance",
+    "userRating": "User rating",
+    "withinDistance": "Within {{distance}} km",
+    "andUp": "and up",
+    "categories": {
+      "fashion": "Fashion",
+      "electronics": "Electronics",
+      "home": "Home",
+      "books": "Books",
+      "sports": "Sports",
+      "tech": "Technology",
+      "art": "Art"
+    },
+    "conditions": {
+      "new": "New",
+      "likeNew": "Like New",
+      "good": "Good",
+      "fair": "Fair",
+      "used": "Used"
+    }
+  },
+  "browseResults": {
+    "results": "results",
+    "found": "found",
+    "noResults": "No results found",
+    "tryDifferentFilters": "Try adjusting your filters"
+  },
+  "itemCard": {
+    "makeOffer": "Make an offer",
+    "condition": {
+      "new": "New",
+      "likenew": "Like New",
+      "good": "Good",
+      "fair": "Fair",
+      "used": "Used",
+      "excellent": "Excellent",
+      "mint": "Mint"
+    }
+  },
+  "product": {
+    "added": "Added 2 days ago",
+    "condition": "Condition",
+    "description": "Description",
+    "details": "Details",
+    "makeTradeOffer": "Make trade offer",
+    "messageSeller": "Contact seller",
+    "safetyTips": "Safety tips",
+    "relatedItems": "Related items"
+  },
+  "productPage": {
+    "home": "Home",
+    "addedTime": "Added 2 days ago",
+    "conditionNote": "Worn several times, slight signs of use",
+    "breadcrumb": {
+      "home": "Home"
+    },
+    "details": {
+      "size": "Size",
+      "material": "Material",
+      "era": "Year"
+    },
+    "safetyTips": {
+      "meetPublic": "Meet in a safe public place",
+      "inspectItem": "Inspect the item before trading",
+      "agreeDetails": "Agree on trade details beforehand",
+      "useMessaging": "Use messaging for all communication"
+    }
+  },
+  "productDetail": {
+    "viewProfile": "View profile",
+    "safetyFirst": "Safety first",
+    "relatedItems": "Related items"
+  },
+  "addItemPage": {
+    "title": "List an Item",
+    "subtitle": "Share your item with the trading community",
+    "back": "Back"
+  },
+  "addItemForm": {
+    "step1": "Photos",
+    "step2": "Details",
+    "step3": "Preferences",
+    "uploadPhotos": "Upload photos",
+    "uploadPhotosDescription": "Add at least one photo of your item",
+    "clickToUpload": "Click to upload",
+    "fileTypes": "PNG, JPG, GIF up to 10MB",
+    "photo": "Photo",
+    "photos_plural": "Photos",
+    "primary": "Primary",
+    "uploaded": "Uploaded",
+    "useCurrent": "Use current",
+    "pleaseUploadImage": "Please upload at least one image",
+    "itemDetails": "Item details",
+    "itemDetailsDescription": "Describe your item in detail",
+    "title": "Title",
+    "titlePlaceholder": "ex: Vintage leather jacket",
+    "description": "Description",
+    "descriptionPlaceholder": "Describe your item in detail...",
+    "category": "Category",
+    "selectCategory": "Select a category",
+    "condition": "Condition",
+    "wantInExchange": "What I want in exchange",
+    "wantInExchangePlaceholder": "ex: Vintage cameras, designer bags...",
+    "location": "Location",
+    "locationPlaceholder": "ex: London, UK",
+    "useCurrentLocation": "Use current location",
+    "previous": "Previous",
+    "next": "Next",
+    "publishItem": "Publish item",
+    "reviewNotice": "Your item will be visible to the community",
+    "itemListedSuccessfully": "Item published successfully!",
+    "submit": "List item"
+  },
+  "editItemPage": {
+    "backToDashboard": "Back to Dashboard",
+    "title": "Edit item",
+    "subtitle": "Update your listing details",
+    "markedAsSwapped": "This item has been marked as swapped",
+    "photos": "Photos",
+    "clickToAddPhotos": "Click to add more photos",
+    "primary": "Primary",
+    "details": "Details",
+    "description": "Description",
+    "titlePlaceholder": "ex: Vintage leather jacket",
+    "descriptionPlaceholder": "Describe your item in detail...",
+    "category": "Category",
+    "selectCategory": "Select a category",
+    "condition": "Condition",
+    "preferences": "Preferences",
+    "wantInExchange": "What I want in exchange",
+    "location": "Location",
+    "locationPlaceholder": "ex: London, UK",
+    "saveChanges": "Save changes",
+    "markAsSwapped": "Mark as swapped",
+    "dangerZone": "Danger zone",
+    "deleteWarning": "Deleting this item is permanent and cannot be undone.",
+    "deleteItem": "Delete item",
+    "cancel": "Cancel"
+  },
+  "makeOfferPage": {
+    "title": "Make a swap offer",
+    "subtitle": "Create your trade proposal",
+    "back": "Back",
+    "steps": {
+      "selectItems": "Select items",
+      "additionalInfo": "Additional information",
+      "confirm": "Confirm"
+    },
+    "stepDescriptions": {
+      "selectItems": "Choose items to offer",
+      "additionalInfo": "Add a message",
+      "confirm": "Review and send offer"
+    },
+    "selectItemsToOffer": "Select items to offer",
+    "addMoreItems": "Add more items",
+    "yourOfferSummary": "Your offer summary",
+    "noItemsSelected": "No items selected",
+    "messageToOwner": "Message to owner",
+    "addFriendlyNote": "Add a friendly note to start the negotiation",
+    "tradeSummary": "Trade summary",
+    "youGive": "You give",
+    "youReceive": "You receive",
+    "for": "FOR",
+    "previous": "Previous",
+    "next": "Next",
+    "yourMessage": "Your message:",
+    "sendSwapOffer": "Send swap offer",
+    "sending": "Sending...",
+    "offerSent": "Swap offer sent successfully!",
+    "pleaseSelectItem": "Please select at least one item to continue",
+    "yourItems": "Your items",
+    "selectedItems": "Selected items",
+    "searchItems": "Search items",
+    "offerMessage": "Offer message",
+    "submitOffer": "Send offer",
+    "messagePlaceholder": "Hello! I'm interested in swapping for your item. Let me know if you are interested in my offer...",
+    "step1": {
+      "title": "Select items",
+      "description": "Choose items to offer"
+    },
+    "step2": {
+      "title": "Additional info",
+      "description": "Add a message"
+    },
+    "step3": {
+      "title": "Confirm",
+      "description": "Review and send offer"
+    }
+  },
+  "proposeSwapPage": {
+    "title": "Review Your Trade",
+    "subtitle": "Please review the items before confirming your proposal",
+    "backToChat": "Back to chat",
+    "whatYouGive": "What you give",
+    "whatYouReceive": "What you receive",
+    "noItemsSelected": "No items selected",
+    "noItemsFromTrader": "No items from trader",
+    "tradingWith": "TRADING WITH",
+    "trades": "trades",
+    "memberSince": "Member since",
+    "viewProfile": "View profile",
+    "tradeSafely": "Trade safely",
+    "safetyTip1": "Meet in a public place to swap items",
+    "safetyTip2": "Inspect items thoroughly before finalizing the swap",
+    "safetyTip3": "Use Swap messaging for all communication",
+    "termsAgreement": "I understand that this proposal is not final until the other party accepts it. I agree to the {termsLink} and {safetyLink}.",
+    "tradingTerms": "Trading Terms",
+    "safetyGuidelines": "Safety Guidelines",
+    "modifyOffer": "Modify offer",
+    "confirmProposal": "Confirm proposal",
+    "sending": "Sending...",
+    "warningNote": "Once sent, the other party will have 48 hours to respond to your proposal. You can withdraw your proposal at any time before acceptance."
+  },
+  "activeTrades": {
+    "title": "Active Trades",
+    "status": {
+      "pending": "Awaiting approval",
+      "approved": "In transit",
+      "transit": "Delivery expected",
+      "completed": "Completed"
+    },
+    "for": "for",
+    "chat": "Chat",
+    "expected": "Expected",
+    "awaitingConfirmation": "Awaiting confirmation",
+    "inTransit": "In transit",
+    "completed": "Completed"
+  },
+  "tradesPage": {
+    "title": "All Trades",
+    "subtitle": "Track all your swap negotiations",
+    "totalTrades": "Total trades",
+    "pending": "Pending",
+    "inTransit": "In transit",
+    "completed": "Completed",
+    "for": "for"
+  },
+  "chat": {
+    "messages": "Messages",
+    "searchConversations": "Search conversations...",
+    "online": "Online",
+    "offline": "Offline",
+    "viewProfile": "View profile",
+    "proposedTrade": "PROPOSED TRADE",
+    "addItemToTrade": "Add item to trade",
+    "proposeExchange": "Propose exchange",
+    "typeMessage": "Type your message...",
+    "sendMessage": "Send message",
+    "noMessages": "No messages"
+  },
+  "addItemToTradeModal": {
+    "title": "Add items to trade",
+    "subtitle": "Select the items you wish to swap",
+    "searchInventory": "Search your inventory...",
+    "item": "item",
+    "items": "items",
+    "clear": "Clear",
+    "all": "all",
+    "noItemsFound": "No items found",
+    "cancel": "Cancel",
+    "add": "Add"
+  },
+  "reviews": {
+    "noReviews": "No reviews",
+    "writeReview": "Write a review",
+    "rating": "Rating",
+    "comment": "Comment"
+  },
+  "reviewsPage": {
+    "title": "Your Reviews",
+    "subtitle": "See what other swappers think of you",
+    "averageRating": "Average rating",
+    "totalReviews": "Total reviews",
+    "positiveRate": "Positive rate",
+    "recentReviews": "Recent reviews"
+  },
+  "profileHeader": {
+    "verified": "Verified",
+    "memberSince": "Member since",
+    "successfulSwaps": "Successful swaps",
+    "rating": "Rating",
+    "responseTime": "Response time",
+    "message": "Message",
+    "follow": "Follow"
+  },
+  "profileTabs": {
+    "availableItems": "Available items",
+    "reviews": "Reviews",
+    "about": "About",
+    "interestedIn": "Interested in"
+  },
+  "profileClient": {
+    "back": "Back"
+  },
+  "settings": {
+    "title": "Settings",
+    "subtitle": "Manage your account and preferences",
+    "profileInformation": "Profile information",
+    "fullName": "Full name",
+    "emailAddress": "Email address",
+    "location": "Location",
+    "saveChanges": "Save changes",
+    "notificationPreferences": "Notification preferences",
+    "tradeOffers": "Trade offers",
+    "tradeOffersDesc": "Get notified when someone makes an offer",
+    "messages": "Messages",
+    "messagesDesc": "Get notified of new messages",
+    "reviews": "Reviews",
+    "reviewsDesc": "Get notified when someone leaves a review",
+    "privacySecurity": "Privacy and security",
+    "profileVisibility": "Profile visibility",
+    "profileVisibilityDesc": "Allow others to see your profile",
+    "showLocation": "Show location",
+    "showLocationDesc": "Display your city on your profile",
+    "changePassword": "Change password",
+    "appSettings": "App settings",
+    "appTheme": "App theme",
+    "systemDefault": "System default",
+    "lightMode": "Light mode",
+    "darkMode": "Dark mode",
+    "chooseAppearance": "Choose how the app should appear",
+    "language": "Language",
+    "chooseLanguage": "Choose your preferred language",
+    "dangerZone": "Danger zone",
+    "dangerZoneDesc": "These actions cannot be undone. Please be careful.",
+    "deleteAccount": "Delete account",
+    "deleteAccountDesc": "Permanently delete your account and all associated data"
+  },
+  "inventory": {
+    "daysAgo": "{{count}} days ago",
+    "weeksAgo": "{{count}} weeks ago",
+    "monthsAgo": "{{count}} months ago"
+  },
+  "emptyState": {
+    "title": "No items found",
+    "description": "We couldn't find any items matching your filters. Try adjusting your search criteria or removing all filters.",
+    "clearFilters": "Remove all filters"
+  },
+  "notFound": {
+    "title": "Page Not Found",
+    "message": "Oops! The page you're looking for seems to be lost. It may have been moved or does not exist.",
+    "goHome": "Back to Home",
+    "goBack": "Back",
+    "needHelp": "Need help?",
+    "visitHelpCenter": "Visit our help center"
+  },
+  "errors": {
+    "somethingWentWrong": "Something went wrong",
+    "networkError": "Network error",
+    "notFound": "Not found",
+    "unauthorized": "Unauthorized"
+  },
+  "support": {
+    "title": "Support & Safety",
+    "subtitle": "We're here to help you swap safely and with confidence",
+    "navigation": {
+      "helpCenter": "Help Center",
+      "helpCenterDesc": "Find answers to frequently asked questions",
+      "safetyTips": "Safety Tips",
+      "safetyTipsDesc": "Learn how to trade safely",
+      "contactUs": "Contact Us",
+      "contactUsDesc": "Get in touch with our team"
+    },
+    "needHelp": "Need immediate help?",
+    "needHelpDesc": "Our support team typically responds within 24 hours.",
+    "contactSupport": "Contact support",
+    "reportIncident": "Report an incident",
+    "haveMoreQuestions": "Have more questions?",
+    "haveMoreQuestionsDesc": "Our support team is available to help with all your safety concerns",
+    "browseFaq": "Browse FAQ",
+    "prioritySupport": "Priority support",
+    "prioritySupportDesc": "Premium subscribers get priority support with faster response times."
+  },
+  "faq": {
+    "title": "Help Center",
+    "subtitle": "Find answers to frequently asked questions",
+    "searchPlaceholder": "Search FAQ...",
+    "noResults": "No results found",
+    "resultCount": "{{count}} result found",
+    "resultCount_plural": "{{count}} results found",
+    "categories": {
+      "shipping": "Shipping",
+      "trading": "Trading",
+      "account": "My Account",
+      "premium": "Premium"
+    },
+    "shipping": {
+      "howItWorks": {
+        "question": "How does shipping work on Swap?",
+        "answer": "When you accept a swap, both parties are responsible for shipping their items. We recommend using tracked shipping methods and keeping receipts until both parties confirm receipt. You can coordinate shipping details through our built-in messaging system."
+      },
+      "whoPays": {
+        "question": "Who pays for shipping?",
+        "answer": "Usually, each party pays for shipping their own item. However, this can be negotiated as part of the trade agreement. Some users offer to cover shipping for high-value swaps or as a gesture of goodwill."
+      },
+      "damaged": {
+        "question": "What if my item is damaged during shipping?",
+        "answer": "We highly recommend using insured shipping for valuable items. If an item arrives damaged, document it immediately with photos and contact the other party via our messaging system. For unresolved disputes, our support team can help mediate."
+      },
+      "international": {
+        "question": "Can I ship internationally?",
+        "answer": "Yes! Swap supports international trades. Make sure to discuss shipping costs and customs requirements with your swap partner before finalizing the agreement. Be aware that some items may have import/export restrictions."
+      },
+      "timeline": {
+        "question": "How long should shipping take?",
+        "answer": "Domestic shipping typically takes 3-7 business days. International shipping can take 1-4 weeks depending on the destination. We recommend agreeing on a shipping timeline with your swap partner and sharing tracking info."
+      }
+    },
+    "trading": {
+      "howItWorks": {
+        "question": "How does trading work on Swap?",
+        "answer": "Swap allows you to exchange items directly with other users. Browse items, make offers, negotiate via our secure messaging, and finalize swaps. Our rating and verification system helps ensure safe trades."
+      },
+      "safety": {
+        "question": "How can I ensure my trades are safe?",
+        "answer": "Meet in public places, check profiles and reviews, use our messaging system for all communication, and document item condition with photos. Trust your instincts and report any suspicious behavior."
+      },
+      "disputes": {
+        "question": "What should I do if there's a dispute?",
+        "answer": "First, contact the other party via our messaging. If the issue persists, our support team can help mediate. Document everything with photos and messages. We have policies to handle disputes fairly."
+      },
+      "misrepresentation": {
+        "question": "What happens if someone misrepresents an item?",
+        "answer": "Report the issue through our support system with photos and documentation. We take misrepresentation seriously and may suspend accounts that violate our policies. Always check reviews and profiles before trading."
+      },
+      "fees": {
+        "question": "Are there fees for trading?",
+        "answer": "Swap is free to use for basic trading. We offer optional Premium features like listing highlights and priority support for a small monthly fee. There are no transaction fees or commissions on swaps."
+      }
+    },
+    "account": {
+      "create": {
+        "question": "How do I create an account?",
+        "answer": "Click 'Sign Up' and provide your email, create a password, and choose a username. You can also sign up via Google or Apple for faster registration. Complete your profile by adding a photo and bio to build trust with other swappers."
+      },
+      "editProfile": {
+        "question": "How do I edit my profile?",
+        "answer": "Go to your Dashboard and click on your profile picture or username. From there, you can update your photo, bio, location, and preferences. Keeping your profile updated helps build trust with potential swap partners."
+      },
+      "delete": {
+        "question": "How do I delete my account?",
+        "answer": "Go to Dashboard > Settings > Account and scroll to 'Delete Account'. Note that this action is permanent and will delete all your listings, trade history, and reviews. Complete all ongoing trades before deletion."
+      },
+      "verification": {
+        "question": "What do the verification badges mean?",
+        "answer": "Verified badges indicate that a user has confirmed their identity through our verification process. This includes email, phone, and optionally ID verification. Verified users tend to have more successful swaps."
+      },
+      "changePassword": {
+        "question": "How do I change my password?",
+        "answer": "Go to Dashboard > Settings > Security and click 'Change Password'. You will need to enter your current password and choose a new one. We recommend using a strong, unique password and enabling two-factor authentication."
+      },
+      "blockUser": {
+        "question": "Can I block another user?",
+        "answer": "Yes. Go to the user's profile and click the three-dot menu, then select 'Block User'. Blocked users cannot message you or see your listings. You can manage blocked users in your account settings."
+      }
+    },
+    "pricing": {
+      "free": {
+        "question": "Do I have to pay to use Swap?",
+        "answer": "No! Swap is completely free for basic trading. You can list items, browse, message other users, and finalize swaps at no cost. Premium features are optional and offer enhanced visibility and support."
+      },
+      "features": {
+        "question": "What are Premium features?",
+        "answer": "Premium includes highlighted listings in search results, priority customer support, advanced analytics on your listings, and early access to new features. Premium subscribers also get a special badge on their profile."
+      },
+      "cancel": {
+        "question": "How do I cancel my Premium subscription?",
+        "answer": "Go to Dashboard > Settings > Subscription and click 'Cancel Premium'. Your premium features will remain active until the end of your current billing period. You can resubscribe at any time."
+      }
+    }
+  },
+  "safety": {
+    "title": "Safety Tips",
+    "subtitle": "Learn how to swap with confidence and protect yourself from potential issues",
+    "safetyMatters": "Your safety matters",
+    "quickChecklist": "Quick safety checklist",
+    "howToSwap": {
+      "title": "How to swap safely",
+      "description": "Follow these guidelines to ensure smooth and secure trades",
+      "tips": {
+        "reviewProfiles": {
+          "title": "Review profiles carefully",
+          "description": "Check user ratings, reviews, and verification status before accepting a trade. Look for established users with a history of successful swaps."
+        },
+        "communicateApp": {
+          "title": "Communicate through the app",
+          "description": "Keep all conversations on our platform. This creates a record and helps our support team assist you if any issues arise."
+        },
+        "documentItems": {
+          "title": "Document your items",
+          "description": "Take clear, well-lit photos showing all angles and imperfections. This prevents misunderstandings and disputes."
+        },
+        "honestCondition": {
+          "title": "Be honest about condition",
+          "description": "Accurately describe your item's condition, including any flaws. Transparency builds trust and prevents conflicts."
+        },
+        "honestReviews": {
+          "title": "Leave honest reviews",
+          "description": "After completing a swap, leave fair feedback. This helps other users and contributes to a trustworthy community."
+        }
+      }
+    },
+    "meetingPerson": {
+      "title": "Meeting in person",
+      "description": "Best practices for secure in-person trades",
+      "tips": {
+        "safeLocation": {
+          "title": "Choose a safe location",
+          "description": "Meet in public, well-lit areas with plenty of people. Cafes, malls, and police station 'safe exchange zones' are ideal."
+        },
+        "daylightHours": {
+          "title": "Meet during daylight",
+          "description": "Schedule meetings during the day whenever possible. If evening is unavoidable, choose a well-lit, busy location."
+        },
+        "bringFriend": {
+          "title": "Bring a friend",
+          "description": "Consider bringing someone with you, especially for high-value swaps. Safety is in numbers."
+        },
+        "shareLocation": {
+          "title": "Share your location",
+          "description": "Let a friend or family member know where you're going and when you plan to be back. Share your live location if possible."
+        },
+        "inspectBefore": {
+          "title": "Inspect before swapping",
+          "description": "Take time to inspect the item thoroughly before completing the trade. Don't feel rushed or pressured."
+        }
+      }
+    },
+    "reportingScams": {
+      "title": "Reporting scams",
+      "description": "What to do if you encounter suspicious activity",
+      "tips": {
+        "warningSigns": {
+          "title": "Identify red flags",
+          "description": "Beware of pushy users, those who refuse in-person meetings, ask for payment outside the app, or offer deals that seem too good to be true."
+        },
+        "reportImmediately": {
+          "title": "Report immediately",
+          "description": "Use the 'Report' button on profiles or messages if you suspect fraudulent activity. Our team reviews all reports promptly."
+        },
+        "documentEverything": {
+          "title": "Keep records of your transactions",
+          "description": "When in doubt, save your messages and take screenshots. Documenting inappropriate behavior helps us maintain a safe platform for all swappers."
+        },
+        "protectInfo": {
+          "title": "Protect your information",
+          "description": "Never share sensitive personal info like your address, financial details, or copies of ID documents with other users."
+        }
+      }
+    },
+    "quickTips": {
+      "trustInstincts": "Trust your instincts — if something feels off, it probably is",
+      "noMoneyFirst": "Never send money or items before receiving the item from the other party",
+      "verifyHighValue": "Verify high-value items before trading",
+      "trackedShipping": "Use tracked shipping for all postal trades",
+      "reportSuspicious": "Report any suspicious behavior immediately"
+    },
+    "emergency": {
+      "title": "Emergency situation?",
+      "description": "If you feel you are in immediate danger, contact local emergency services first. Then, report the incident to us so we can take appropriate action on the platform.",
+      "reportIncident": "Report an incident",
+      "haveMoreQuestions": "Have more questions?",
+      "haveMoreQuestionsDesc": "Our support team is available to help with all your safety concerns",
+      "browseFaq": "Browse FAQ",
+      "contactSupport": "Contact support"
+    }
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "Our support team is here to help",
+    "description": "Fill out the form below and we'll get back to you as soon as possible.",
+    "form": {
+      "name": "Name",
+      "namePlaceholder": "Your name",
+      "email": "Email",
+      "emailPlaceholder": "your@email.com",
+      "reason": "Reason for contact",
+      "reasonPlaceholder": "Select a reason",
+      "subject": "Subject",
+      "subjectPlaceholder": "Briefly describe your inquiry",
+      "message": "Message",
+      "messagePlaceholder": "Describe your request in detail...",
+      "submit": "Send message",
+      "submitting": "Sending..."
+    },
+    "reasons": {
+      "general": "General inquiry",
+      "technical": "Technical support",
+      "tradeDispute": "Trade dispute",
+      "reportUser": "Report a user",
+      "billing": "Billing question",
+      "feedback": "Feedback & Suggestions",
+      "partnership": "Partnership inquiry",
+      "other": "Other"
+    },
+    "responseTimes": {
+      "general": "24-48 hours",
+      "technical": "12-24 hours",
+      "tradeDispute": "6-12 hours",
+      "reportUser": "2-6 hours",
+      "billing": "24-48 hours",
+      "feedback": "48-72 hours",
+      "partnership": "48-72 hours",
+      "other": "24-48 hours"
+    },
+    "success": {
+      "title": "Message sent successfully!",
+      "description": "We've received your message and will get back to you as soon as possible.",
+      "reference": "Reference: #{{reference}}",
+      "expectedResponse": "Estimated response time: {{time}}",
+      "backToHome": "Back to Home",
+      "newMessage": "Send another message"
+    },
+    "prioritySupport": {
+      "title": "Live Chat",
+      "description": "Available for Premium users",
+      "urgentDispute": "Urgent trade dispute?",
+      "urgentDisputeDesc": "Include the trade ID and both usernames for faster resolution.",
+      "learnMore": "Learn more about Premium"
+    },
+    "otherWays": {
+      "title": "Other ways to contact us",
+      "helpCenter": {
+        "title": "Check FAQ first",
+        "description": "Many common questions are answered in our help center.",
+        "browse": "Browse FAQ"
+      },
+      "community": {
+        "title": "Join our community",
+        "description": "Connect with other swappers and share your experiences."
+      },
+      "emergency": {
+        "title": "Emergency?",
+        "description": "For urgent safety matters, please use our report form."
+      }
+    },
+    "info": {
+      "officeHours": "Office Hours: Mon-Fri, 9am-5pm ET",
+      "responseTime": "Average response time: 24 hours",
+      "languages": "Languages: French, English"
+    }
+  },
+  "trustSection": {
+    "title": "Simple and Secure Trading",
+    "subtitle": "Our trusted platform makes peer-to-peer swapping safe and easy",
+    "step1": {
+      "title": "List your item",
+      "description": "Upload photos and details of what you want to swap"
+    },
+    "step2": {
+      "title": "Chat & Propose",
+      "description": "Connect with swappers and negotiate the perfect trade"
+    },
+    "step3": {
+      "title": "Ship & Receive",
+      "description": "Ship your item safely and receive what you've swapped for"
+    }
+  }
+}

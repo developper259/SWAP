@@ -1,34 +1,36 @@
 'use client';
 
 import { Package, MessageSquare, Truck } from 'lucide-react';
-
-const steps = [
-  {
-    icon: Package,
-    title: 'List Your Item',
-    description: 'Upload photos and details about what you want to trade',
-  },
-  {
-    icon: MessageSquare,
-    title: 'Chat & Propose',
-    description: 'Connect with traders and negotiate the perfect exchange',
-  },
-  {
-    icon: Truck,
-    title: 'Ship & Receive',
-    description: 'Securely ship your item and receive what you traded for',
-  },
-];
+import { useLanguage } from '@/lib/language-context';
 
 export default function TrustSection() {
+  const { t } = useLanguage();
+
+  const steps = [
+    {
+      icon: Package,
+      title: t('trustSection.step1.title'),
+      description: t('trustSection.step1.description'),
+    },
+    {
+      icon: MessageSquare,
+      title: t('trustSection.step2.title'),
+      description: t('trustSection.step2.description'),
+    },
+    {
+      icon: Truck,
+      title: t('trustSection.step3.title'),
+      description: t('trustSection.step3.description'),
+    },
+  ];
   return (
     <section className="max-w-7xl mx-auto px-4 py-16 md:py-24">
       <div className="text-center mb-12">
         <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-          Simple & Secure Trading
+          {t('trustSection.title')}
         </h2>
         <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-          Our trusted platform makes peer-to-peer trading safe and easy
+          {t('trustSection.subtitle')}
         </p>
       </div>
 

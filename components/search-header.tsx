@@ -11,6 +11,7 @@ import {
 } from '@/components/ui/select';
 import { X } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
+import { useLanguage } from '@/lib/language-context';
 
 interface SearchHeaderProps {
   searchQuery?: string;
@@ -27,6 +28,7 @@ export default function SearchHeader({
   onClearFilters,
   onRemoveFilter,
 }: SearchHeaderProps) {
+  const { t } = useLanguage();
   const [sortBy, setSortBy] = useState('newest');
 
   const handleSortChange = (value: string) => {
@@ -40,20 +42,20 @@ export default function SearchHeader({
       <div className="flex items-center justify-between">
         <div>
           <h1 className="text-2xl font-bold text-foreground">
-            Results for <span className="text-primary">"{searchQuery}"</span>
+            {t('browseResults.results')} pour <span className="text-primary">"{searchQuery}"</span>
           </h1>
-          <p className="text-sm text-muted-foreground mt-1">Found 24 items</p>
+          <p className="text-sm text-muted-foreground mt-1">{t('browseResults.found')} 24 articles</p>
         </div>
 
         <Select value={sortBy} onValueChange={handleSortChange}>
           <SelectTrigger className="w-[180px] rounded-lg border-border bg-card">
-            <SelectValue placeholder="Sort by" />
+            <SelectValue placeholder={t('browsePage.sortBy')} />
           </SelectTrigger>
           <SelectContent>
-            <SelectItem value="newest">Newest</SelectItem>
-            <SelectItem value="closest">Closest</SelectItem>
-            <SelectItem value="popular">Most Popular</SelectItem>
-            <SelectItem value="rating">Highest Rated</SelectItem>
+            <SelectItem value="newest">{t('browsePage.sortOptions.newest')}</SelectItem>
+            <SelectItem value="closest">{t('browsePage.sortOptions.closest')}</SelectItem>
+            <SelectItem value="popular">{t('browsePage.sortOptions.popular')}</SelectItem>
+            <SelectItem value="rating">{t('browsePage.sortOptions.rating')}</SelectItem>
           </SelectContent>
         </Select>
       </div>
@@ -61,7 +63,7 @@ export default function SearchHeader({
       {/* Active Filters */}
       {activeFilters.length > 0 && (
         <div className="flex flex-wrap items-center gap-2">
-          <span className="text-sm text-muted-foreground">Active filters:</span>
+          <span className="text-sm text-muted-foreground">{t('browsePage.activeFilters')}:</span>
           {activeFilters.map(filter => (
             <Badge
               key={filter.value}
@@ -83,7 +85,7 @@ export default function SearchHeader({
             onClick={onClearFilters}
             className="text-xs h-6 text-muted-foreground hover:text-foreground"
           >
-            Clear all
+            {t('browsePage.clearAll')}
           </Button>
         </div>
       )}

@@ -1,6 +1,7 @@
 'use client';
 
 import { Recycle, Package, Star, Leaf } from 'lucide-react';
+import { useLanguage } from '@/lib/language-context';
 
 interface StatCardProps {
   icon: React.ReactNode;
@@ -22,34 +23,35 @@ function StatCard({ icon, label, value, accent = 'text-primary' }: StatCardProps
 }
 
 export default function DashboardHeader() {
+  const { t } = useLanguage();
   return (
     <div className="bg-card border-b border-border">
       <div className="max-w-7xl mx-auto px-4 py-8">
         <div className="mb-8">
-          <h1 className="text-3xl font-bold text-foreground mb-1">Welcome back, Alex</h1>
-          <p className="text-muted-foreground">Manage your trades and items</p>
+          <h1 className="text-3xl font-bold text-foreground mb-1">{t('dashboard.welcomeBack')}</h1>
+          <p className="text-muted-foreground">{t('dashboard.manageTradesItems')}</p>
         </div>
 
         {/* Stats Grid */}
         <div className="grid md:grid-cols-4 gap-4">
           <StatCard
             icon={<Recycle className="w-6 h-6" />}
-            label="Successful Swaps"
+            label={t('dashboard.successfulSwaps')}
             value="12"
           />
           <StatCard
             icon={<Package className="w-6 h-6" />}
-            label="Items Listed"
+            label={t('dashboard.itemsListed')}
             value="8"
           />
           <StatCard
             icon={<Star className="w-6 h-6" />}
-            label="Average Rating"
+            label={t('dashboard.averageRating')}
             value="4.9"
           />
           <StatCard
             icon={<Leaf className="w-6 h-6 text-green-600" />}
-            label="CO₂ Saved"
+            label={t('dashboard.co2Saved')}
             value="24 kg"
             accent="text-green-600"
           />

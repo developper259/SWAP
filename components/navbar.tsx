@@ -4,8 +4,10 @@ import Link from 'next/link';
 import { Bell, User, Plus, MessageCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import SearchBar from '@/components/search-bar';
+import { useLanguage } from '@/lib/language-context';
 
 export default function Navbar() {
+  const { t } = useLanguage();
   return (
     <nav className="sticky top-0 z-50 w-full bg-white/80 backdrop-blur-md border-b border-border">
       <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between gap-4">
@@ -29,7 +31,7 @@ export default function Navbar() {
           >
             <Link href="/add-item">
               <Plus className="w-4 h-4" />
-              List an Item
+              {t('navbar.listItem')}
             </Link>
           </Button>
 

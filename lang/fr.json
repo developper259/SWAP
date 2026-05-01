@@ -1,0 +1,814 @@
+{
+  "common": {
+    "buttons": {
+      "save": "Enregistrer",
+      "cancel": "Annuler",
+      "confirm": "Confirmer",
+      "back": "Retour",
+      "next": "Suivant",
+      "previous": "Précédent",
+      "send": "Envoyer",
+      "edit": "Modifier",
+      "delete": "Supprimer",
+      "add": "Ajouter",
+      "search": "Rechercher",
+      "filter": "Filtrer",
+      "close": "Fermer",
+      "view": "Voir",
+      "message": "Message",
+      "offer": "Offre",
+      "swap": "Échanger",
+      "trade": "Échanger",
+      "submit": "Envoyer",
+      "submitting": "Envoi en cours..."
+    },
+    "loading": "Chargement...",
+    "error": "Erreur",
+    "success": "Succès",
+    "required": "Obligatoire",
+    "optional": "Optionnel",
+    "itemDeleted": "Article supprimé",
+    "itemMarkedAsSwapped": "Article marqué comme échangé !",
+    "itemUpdatedSuccessfully": "Article mis à jour avec succès !",
+    "online": "En ligne",
+    "offline": "Hors ligne",
+    "noResults": "Aucun résultat trouvé",
+    "noItems": "Aucun article",
+    "noTrades": "Aucun échange actif",
+    "noMessages": "Aucun message",
+    "noReviews": "Aucun avis"
+  },
+  "navigation": {
+    "home": "Accueil",
+    "browse": "Parcourir",
+    "dashboard": "Tableau de bord",
+    "messages": "Messages",
+    "profile": "Profil",
+    "settings": "Paramètres",
+    "logout": "Déconnexion"
+  },
+  "navbar": {
+    "listItem": "Déposer un article"
+  },
+  "auth": {
+    "signIn": "Se connecter",
+    "signUp": "S'inscrire",
+    "email": "Email",
+    "password": "Mot de passe",
+    "forgotPassword": "Mot de passe oublié?",
+    "rememberMe": "Se souvenir de moi"
+  },
+  "conditions": {
+    "new": "Neuf",
+    "likeNew": "Comme neuf",
+    "excellent": "Excellent",
+    "good": "Bon",
+    "fair": "Correct",
+    "used": "Usé",
+    "mint": "Parfait",
+    "poor": "Mauvais"
+  },
+  "categories": {
+    "fashion": "Mode",
+    "electronics": "Électronique",
+    "home": "Maison",
+    "books": "Livres",
+    "sports": "Sports",
+    "tech": "Technologie",
+    "art": "Art",
+    "accessories": "Accessoires",
+    "music": "Musique"
+  },
+  "home": {
+    "title": "Échanger au lieu d'acheter",
+    "subtitle": "Échangez des articles dont vous n'avez plus besoin avec des gens de votre communauté. Durable, abordable et amusant.",
+    "startTrading": "Commencer à échanger",
+    "learnHow": "Découvrir comment ça marche",
+    "itemsListed": "Articles listés",
+    "activeTraders": "Échangeurs actifs"
+  },
+  "footer": {
+    "tagline": "Échangez durablement, vivez mieux.",
+    "browse": "Parcourir",
+    "support": "Support",
+    "legal": "Mentions légales",
+    "home": "Accueil",
+    "homeCategory": "Maison",
+    "fashion": "Mode",
+    "electronics": "Électronique",
+    "helpCenter": "Centre d'aide",
+    "safetyTips": "Conseils de sécurité",
+    "contact": "Contact",
+    "terms": "Conditions",
+    "privacy": "Confidentialité",
+    "cookies": "Cookies",
+    "copyright": "© 2026 Swap. Tous droits réservés."
+  },
+  "dashboard": {
+    "welcome": "Bienvenue",
+    "welcomeBack": "Bon retour, Alex",
+    "myWardrobe": "Ma Garde-robe",
+    "activeTrades": "Échanges Actifs",
+    "reviews": "Avis",
+    "addItem": "Ajouter un article",
+    "manageTradesItems": "Gérez vos échanges et articles",
+    "successfulSwaps": "Échanges réussis",
+    "itemsListed": "Articles listés",
+    "averageRating": "Note moyenne",
+    "co2Saved": "CO₂ économisé",
+    "addNewItem": "Ajouter un nouvel article",
+    "markAsSwapped": "Marquer comme échangé"
+  },
+  "dashboardSidebar": {
+    "myWardrobe": "Ma Garde-robe",
+    "activeSwap": "Échanges Actifs",
+    "reviews": "Avis",
+    "settings": "Paramètres",
+    "memberSince": "Membre depuis {{year}}",
+    "signOut": "Se déconnecter"
+  },
+  "browsePage": {
+    "searchPlaceholder": "Rechercher des articles...",
+    "quickResults": "Résultats rapides",
+    "useArrows": "Utiliser ↑↓ pour naviguer, Entrée pour sélectionner",
+    "closeFilters": "Fermer les filtres",
+    "showFilters": "Afficher les filtres",
+    "filters": "Filtres",
+    "clearFilters": "Effacer les filtres",
+    "sortBy": "Trier par",
+    "sortOptions": {
+      "newest": "Plus récents",
+      "closest": "Plus proches",
+      "popular": "Plus populaires",
+      "rating": "Mieux notés"
+    },
+    "activeFilters": "Filtres actifs",
+    "clearAll": "Tout effacer"
+  },
+  "searchBar": {
+    "placeholder": "Rechercher des articles...",
+    "quickResults": "Résultats rapides",
+    "navigateInstructions": "Utiliser ↑↓ pour naviguer, Entrée pour sélectionner"
+  },
+  "searchFilters": {
+    "category": "Catégorie",
+    "condition": "État",
+    "distance": "Distance",
+    "userRating": "Note utilisateur",
+    "withinDistance": "Dans un rayon de {{distance}} km",
+    "andUp": "et plus",
+    "categories": {
+      "fashion": "Mode",
+      "electronics": "Électronique",
+      "home": "Maison",
+      "books": "Livres",
+      "sports": "Sports",
+      "tech": "Technologie",
+      "art": "Art"
+    },
+    "conditions": {
+      "new": "Neuf",
+      "likeNew": "Comme neuf",
+      "good": "Bon",
+      "fair": "Correct",
+      "used": "Usé"
+    }
+  },
+  "browseResults": {
+    "results": "résultats",
+    "found": "trouvés",
+    "noResults": "Aucun résultat trouvé",
+    "tryDifferentFilters": "Essayez de modifier les filtres"
+  },
+  "itemCard": {
+    "makeOffer": "Faire une offre",
+    "condition": {
+      "new": "Neuf",
+      "likenew": "Comme neuf",
+      "good": "Bon",
+      "fair": "Correct",
+      "used": "Usé",
+      "excellent": "Excellent",
+      "mint": "Parfait"
+    }
+  },
+  "product": {
+    "added": "Ajouté il y a 2 jours",
+    "condition": "État",
+    "description": "Description",
+    "details": "Détails",
+    "makeTradeOffer": "Faire une offre d'échange",
+    "messageSeller": "Contacter le vendeur",
+    "safetyTips": "Conseils de sécurité",
+    "relatedItems": "Articles similaires"
+  },
+  "productPage": {
+    "home": "Accueil",
+    "addedTime": "Ajouté il y a 2 jours",
+    "conditionNote": "Porté plusieurs fois, légers signes d'utilisation",
+    "breadcrumb": {
+      "home": "Accueil"
+    },
+    "details": {
+      "size": "Taille",
+      "material": "Matière",
+      "era": "Année"
+    },
+    "safetyTips": {
+      "meetPublic": "Rencontrer dans un lieu public sûr",
+      "inspectItem": "Inspecter l'article avant l'échange",
+      "agreeDetails": "Mettre d'accord les détails de l'échange au préalable",
+      "useMessaging": "Utiliser la messagerie pour toute communication"
+    }
+  },
+  "productDetail": {
+    "viewProfile": "Voir le profil",
+    "safetyFirst": "Sécurité d'abord",
+    "relatedItems": "Articles similaires"
+  },
+  "addItemPage": {
+    "title": "Déposer un Article",
+    "subtitle": "Partagez votre article avec la communauté d'échange",
+    "back": "Retour"
+  },
+  "addItemForm": {
+    "step1": "Photos",
+    "step2": "Détails",
+    "step3": "Préférences",
+    "uploadPhotos": "Télécharger des photos",
+    "uploadPhotosDescription": "Ajoutez au moins une photo de votre article",
+    "clickToUpload": "Cliquez pour télécharger",
+    "fileTypes": "PNG, JPG, GIF jusqu'à 10MB",
+    "photo": "Photo",
+    "photos_plural": "Photos",
+    "primary": "Principale",
+    "uploaded": "Téléchargé",
+    "useCurrent": "Utiliser l'actuel",
+    "pleaseUploadImage": "Veuillez télécharger au moins une image",
+    "itemDetails": "Détails de l'article",
+    "itemDetailsDescription": "Décrivez votre article en détail",
+    "title": "Titre",
+    "titlePlaceholder": "ex: Veste en cuir vintage",
+    "description": "Description",
+    "descriptionPlaceholder": "Décrivez votre article en détail...",
+    "category": "Catégorie",
+    "selectCategory": "Sélectionner une catégorie",
+    "condition": "État",
+    "wantInExchange": "Ce que je veux en échange",
+    "wantInExchangePlaceholder": "ex: Appareils photo vintage, sacs de créateurs...",
+    "location": "Localisation",
+    "locationPlaceholder": "ex: Paris, France",
+    "useCurrentLocation": "Utiliser la position actuelle",
+    "previous": "Précédent",
+    "next": "Suivant",
+    "publishItem": "Publier l'article",
+    "reviewNotice": "Votre article sera visible par la communauté",
+    "itemListedSuccessfully": "Article publié avec succès !",
+    "submit": "Déposer l'article"
+  },
+  "editItemPage": {
+    "backToDashboard": "Retour au Dashboard",
+    "title": "Modifier l'article",
+    "subtitle": "Mettez à jour les détails de votre annonce",
+    "markedAsSwapped": "Cet article a été marqué comme échangé",
+    "photos": "Photos",
+    "clickToAddPhotos": "Cliquer pour ajouter plus de photos",
+    "primary": "Principale",
+    "details": "Détails",
+    "description": "Description",
+    "titlePlaceholder": "ex: Veste en cuir vintage",
+    "descriptionPlaceholder": "Décrivez votre article en détail...",
+    "category": "Catégorie",
+    "selectCategory": "Sélectionner une catégorie",
+    "condition": "État",
+    "preferences": "Préférences",
+    "wantInExchange": "Ce que je veux en échange",
+    "location": "Localisation",
+    "locationPlaceholder": "ex: Paris, France",
+    "saveChanges": "Sauvegarder les modifications",
+    "markAsSwapped": "Marquer comme échangé",
+    "dangerZone": "Zone de danger",
+    "deleteWarning": "La suppression de cet article est permanente et ne peut être annulée.",
+    "deleteItem": "Supprimer l'article",
+    "cancel": "Annuler"
+  },
+  "makeOfferPage": {
+    "title": "Faire une offre d'échange",
+    "subtitle": "Créez votre proposition d'échange",
+    "back": "Retour",
+    "steps": {
+      "selectItems": "Sélectionner les articles",
+      "additionalInfo": "Informations supplémentaires",
+      "confirm": "Confirmer"
+    },
+    "stepDescriptions": {
+      "selectItems": "Choisir les articles à offrir",
+      "additionalInfo": "Ajouter un message",
+      "confirm": "Examiner et envoyer l'offre"
+    },
+    "selectItemsToOffer": "Sélectionner les articles à offrir",
+    "addMoreItems": "Ajouter plus d'articles",
+    "yourOfferSummary": "Résumé de votre offre",
+    "noItemsSelected": "Aucun article sélectionné",
+    "messageToOwner": "Message au propriétaire",
+    "addFriendlyNote": "Ajouter une note amicale pour commencer la négociation",
+    "tradeSummary": "Résumé de l'échange",
+    "youGive": "Vous donnez",
+    "youReceive": "Vous recevez",
+    "for": "POUR",
+    "previous": "Précédent",
+    "next": "Suivant",
+    "yourMessage": "Votre message:",
+    "sendSwapOffer": "Envoyer l'offre d'échange",
+    "sending": "Envoi...",
+    "offerSent": "Offre d'échange envoyée avec succès!",
+    "pleaseSelectItem": "Veuillez sélectionner au moins un article pour continuer",
+    "yourItems": "Vos articles",
+    "selectedItems": "Articles sélectionnés",
+    "searchItems": "Rechercher des articles",
+    "offerMessage": "Message d'offre",
+    "submitOffer": "Envoyer l'offre",
+    "messagePlaceholder": "Bonjour ! Je suis intéressé par l'échange de votre article. Faites-moi savoir si vous êtes intéressé par mon offre...",
+    "step1": {
+      "title": "Sélectionner les articles",
+      "description": "Choisir les articles à offrir"
+    },
+    "step2": {
+      "title": "Informations supplémentaires",
+      "description": "Ajouter un message"
+    },
+    "step3": {
+      "title": "Confirmer",
+      "description": "Examiner et envoyer l'offre"
+    }
+  },
+  "proposeSwapPage": {
+    "title": "Examiner Votre Échange",
+    "subtitle": "Veuillez examiner les articles avant de confirmer votre proposition",
+    "backToChat": "Retour au chat",
+    "whatYouGive": "Ce que vous donnez",
+    "whatYouReceive": "Ce que vous recevez",
+    "noItemsSelected": "Aucun article sélectionné",
+    "noItemsFromTrader": "Aucun article de l'échangeur",
+    "tradingWith": "ÉCHANGE AVEC",
+    "trades": "échanges",
+    "memberSince": "Membre depuis",
+    "viewProfile": "Voir le profil",
+    "tradeSafely": "Échangez en toute sécurité",
+    "safetyTip1": "Rencontrez-vous dans un lieu public pour échanger les articles",
+    "safetyTip2": "Inspectez les articles soigneusement avant de finaliser l'échange",
+    "safetyTip3": "Utilisez la messagerie Swap pour toute communication",
+    "termsAgreement": "Je comprends que cette proposition n'est pas finale tant que l'autre partie ne l'accepte pas. J'accepte les {termsLink} et les {safetyLink}.",
+    "tradingTerms": "Conditions d'échange",
+    "safetyGuidelines": "Consignes de sécurité",
+    "modifyOffer": "Modifier l'offre",
+    "confirmProposal": "Confirmer la proposition",
+    "sending": "Envoi en cours...",
+    "warningNote": "Une fois envoyée, l'autre partie aura 48 heures pour répondre à votre proposition. Vous pouvez retirer votre proposition à tout moment avant son acceptation."
+  },
+  "activeTrades": {
+    "title": "Échanges Actifs",
+    "status": {
+      "pending": "En attente d'approbation",
+      "approved": "En transit",
+      "transit": "Livraison attendue",
+      "completed": "Terminé"
+    },
+    "for": "pour",
+    "chat": "Discuter",
+    "expected": "Attendu",
+    "awaitingConfirmation": "En attente de confirmation",
+    "inTransit": "En transit",
+    "completed": "Terminé"
+  },
+  "tradesPage": {
+    "title": "Tous les Échanges",
+    "subtitle": "Suivez toutes vos négociations d'échange",
+    "totalTrades": "Total des échanges",
+    "pending": "En attente",
+    "inTransit": "En transit",
+    "completed": "Terminés",
+    "for": "pour"
+  },
+  "chat": {
+    "messages": "Messages",
+    "searchConversations": "Rechercher des conversations...",
+    "online": "En ligne",
+    "offline": "Hors ligne",
+    "viewProfile": "Voir le profil",
+    "proposedTrade": "ÉCHANGE PROPOSÉ",
+    "addItemToTrade": "Ajouter un article à l'échange",
+    "proposeExchange": "Proposer un échange",
+    "typeMessage": "Tapez votre message...",
+    "sendMessage": "Envoyer le message",
+    "noMessages": "Aucun message"
+  },
+  "addItemToTradeModal": {
+    "title": "Ajouter des articles à l'échange",
+    "subtitle": "Sélectionnez les articles que vous souhaitez échanger",
+    "searchInventory": "Rechercher dans votre inventaire...",
+    "item": "article",
+    "items": "articles",
+    "clear": "Effacer",
+    "all": "tout",
+    "noItemsFound": "Aucun article trouvé",
+    "cancel": "Annuler",
+    "add": "Ajouter"
+  },
+  "reviews": {
+    "noReviews": "Aucun avis",
+    "writeReview": "Écrire un avis",
+    "rating": "Note",
+    "comment": "Commentaire"
+  },
+  "reviewsPage": {
+    "title": "Vos Avis",
+    "subtitle": "Voyez ce que les autres échangeurs pensent de vous",
+    "averageRating": "Note moyenne",
+    "totalReviews": "Total des avis",
+    "positiveRate": "Taux positif",
+    "recentReviews": "Avis récents"
+  },
+  "profileHeader": {
+    "verified": "Vérifié",
+    "memberSince": "Membre depuis",
+    "successfulSwaps": "Échanges réussis",
+    "rating": "Note",
+    "responseTime": "Temps de réponse",
+    "message": "Message",
+    "follow": "Suivre"
+  },
+  "profileTabs": {
+    "availableItems": "Articles disponibles",
+    "reviews": "Avis",
+    "about": "À propos",
+    "interestedIn": "Intéressé par"
+  },
+  "profileClient": {
+    "back": "Retour"
+  },
+  "settings": {
+    "title": "Paramètres",
+    "subtitle": "Gérer votre compte et vos préférences",
+    "profileInformation": "Informations du profil",
+    "fullName": "Nom complet",
+    "emailAddress": "Adresse email",
+    "location": "Localisation",
+    "saveChanges": "Enregistrer les modifications",
+    "notificationPreferences": "Préférences de notification",
+    "tradeOffers": "Offres d'échange",
+    "tradeOffersDesc": "Être notifié quand quelqu'un fait une offre",
+    "messages": "Messages",
+    "messagesDesc": "Être notifié des nouveaux messages",
+    "reviews": "Avis",
+    "reviewsDesc": "Être notifié quand quelqu'un laisse un avis",
+    "privacySecurity": "Confidentialité et sécurité",
+    "profileVisibility": "Visibilité du profil",
+    "profileVisibilityDesc": "Permettre aux autres de voir votre profil",
+    "showLocation": "Afficher la localisation",
+    "showLocationDesc": "Afficher votre ville sur votre profil",
+    "changePassword": "Changer le mot de passe",
+    "appSettings": "Paramètres de l'application",
+    "appTheme": "Thème de l'application",
+    "systemDefault": "Défaut du système",
+    "lightMode": "Mode clair",
+    "darkMode": "Mode sombre",
+    "chooseAppearance": "Choisir comment l'application doit apparaître",
+    "language": "Langue",
+    "chooseLanguage": "Choisir votre langue préférée",
+    "dangerZone": "Zone de danger",
+    "dangerZoneDesc": "Ces actions ne peuvent pas être annulées. Soyez prudent.",
+    "deleteAccount": "Supprimer le compte",
+    "deleteAccountDesc": "Supprimer définitivement votre compte et toutes les données associées"
+  },
+  "inventory": {
+    "daysAgo": "il y a {{count}} jours",
+    "weeksAgo": "il y a {{count}} semaines",
+    "monthsAgo": "il y a {{count}} mois"
+  },
+  "emptyState": {
+    "title": "Aucun article trouvé",
+    "description": "Nous n'avons pas pu trouver d'articles correspondant à vos filtres. Essayez d'ajuster vos critères de recherche ou de supprimer tous les filtres.",
+    "clearFilters": "Supprimer tous les filtres"
+  },
+  "notFound": {
+    "title": "Page Non Trouvée",
+    "message": "Oups ! La page que vous cherchez semble s'être perdue. Elle a peut-être été déplacée ou n'existe pas.",
+    "goHome": "Retour à l'accueil",
+    "goBack": "Retour",
+    "needHelp": "Besoin d'aide ?",
+    "visitHelpCenter": "Visitez notre centre d'aide"
+  },
+  "errors": {
+    "somethingWentWrong": "Quelque chose s'est mal passé",
+    "networkError": "Erreur réseau",
+    "notFound": "Non trouvé",
+    "unauthorized": "Non autorisé"
+  },
+  "support": {
+    "title": "Support & Sécurité",
+    "subtitle": "Nous sommes là pour vous aider à échanger en toute sécurité et en toute confiance",
+    "navigation": {
+      "helpCenter": "Centre d'aide",
+      "helpCenterDesc": "Trouvez des réponses aux questions fréquentes",
+      "safetyTips": "Conseils de sécurité",
+      "safetyTipsDesc": "Apprenez à échanger en toute sécurité",
+      "contactUs": "Nous contacter",
+      "contactUsDesc": "Contactez notre équipe"
+    },
+    "needHelp": "Besoin d'aide immédiate ?",
+    "needHelpDesc": "Notre équipe support répond généralement sous 24 heures.",
+    "contactSupport": "Contacter le support",
+    "reportIncident": "Signaler un incident",
+    "haveMoreQuestions": "Vous avez d'autres questions ?",
+    "haveMoreQuestionsDesc": "Notre équipe support est disponible pour vous aider avec toutes vos préoccupations de sécurité",
+    "browseFaq": "Parcourir la FAQ",
+    "prioritySupport": "Support prioritaire",
+    "prioritySupportDesc": "Les abonnés Premium bénéficient d'un support prioritaire avec des temps de réponse plus rapides."
+  },
+  "faq": {
+    "title": "Centre d'aide",
+    "subtitle": "Trouvez des réponses aux questions fréquentes",
+    "searchPlaceholder": "Rechercher dans la FAQ...",
+    "noResults": "Aucun résultat trouvé",
+    "resultCount": "{{count}} résultat trouvé",
+    "resultCount_plural": "{{count}} résultats trouvés",
+    "categories": {
+      "shipping": "Livraison",
+      "trading": "Échange",
+      "account": "Mon compte",
+      "premium": "Premium"
+    },
+    "shipping": {
+      "howItWorks": {
+        "question": "Comment fonctionne la livraison sur Swap ?",
+        "answer": "Lorsque vous acceptez un échange, les deux parties sont responsables d'expédier leurs articles. Nous recommandons d'utiliser des méthodes de livraison suivies et de conserver les reçus jusqu'à ce que les deux parties confirment la réception. Vous pouvez coordonner les détails de livraison via notre système de messagerie intégré."
+      },
+      "whoPays": {
+        "question": "Qui paie pour la livraison ?",
+        "answer": "Habituellement, chaque partie paie la livraison de son propre article. Cependant, cela peut être négocié dans le cadre de l'accord d'échange. Certains utilisateurs proposent de couvrir les frais de livraison pour les échanges de grande valeur ou en signe de bonne volonté."
+      },
+      "damaged": {
+        "question": "Que faire si mon article est endommagé pendant la livraison ?",
+        "answer": "Nous recommandons vivement d'utiliser une livraison assurée pour les articles de valeur. Si un article arrive endommagé, documentez-le immédiatement avec des photos et contactez l'autre partie via notre système de messagerie. Pour les litiges non résolus, notre équipe support peut aider à médier."
+      },
+      "international": {
+        "question": "Puis-je expédier internationalement ?",
+        "answer": "Oui ! Swap prend en charge les échanges internationaux. Assurez-vous de discuter des frais de livraison et des exigences douanières avec votre partenaire d'échange avant de finaliser l'accord. Soyez conscient que certains articles peuvent avoir des restrictions d'importation/exportation."
+      },
+      "timeline": {
+        "question": "Combien de temps devrait prendre la livraison ?",
+        "answer": "La livraison nationale prend généralement 3-7 jours ouvrables. La livraison internationale peut prendre 1-4 semaines selon la destination. Nous recommandons de convenir d'un calendrier de livraison avec votre partenaire d'échange et de partager les informations de suivi."
+      }
+    },
+    "trading": {
+      "howItWorks": {
+        "question": "Comment fonctionne l'échange sur Swap ?",
+        "answer": "Swap vous permet d'échanger des articles directement avec d'autres utilisateurs. Parcourez les articles, faites des offres, négociez via notre messagerie sécurisée, et finalisez les échanges. Notre système de notation et de vérification aide à garantir des échanges sûrs."
+      },
+      "safety": {
+        "question": "Comment puis-je garantir la sécurité de mes échanges ?",
+        "answer": "Rencontrez-vous dans des lieux publics, vérifiez les profils et les avis, utilisez notre système de messagerie pour toute communication, et documentez l'état des articles avec des photos. Faites confiance à votre instinct et signez tout comportement suspect."
+      },
+      "disputes": {
+        "question": "Que faire en cas de litige ?",
+        "answer": "Contactez d'abord l'autre partie via notre messagerie. Si le problème persiste, notre équipe support peut aider à médier. Documentez tout avec des photos et messages. Nous avons des politiques pour gérer les litiges de manière équitable."
+      },
+      "misrepresentation": {
+        "question": "Que se passe-t-il si quelqu'un déforme un article ?",
+        "answer": "Signalez le problème via notre système de support avec des photos et une documentation. Nous prenons la déformation au sérieux et pouvons suspendre les comptes qui violent nos politiques. Vérifiez toujours les avis et les profils avant d'échanger."
+      },
+      "fees": {
+        "question": "Y a-t-il des frais pour les échanges ?",
+        "answer": "Swap est gratuit à utiliser pour les échanges de base. Nous offrons des fonctionnalités Premium optionnelles comme des mises en avant d'annonces et un support prioritaire pour une petite mensualité. Il n'y a pas de frais de transaction ni de commission sur les échanges."
+      }
+    },
+    "account": {
+      "create": {
+        "question": "Comment créer un compte ?",
+        "answer": "Cliquez sur 'S'inscrire' et fournissez votre email, créez un mot de passe, et choisissez un nom d'utilisateur. Vous pouvez aussi vous inscrire via Google ou Apple pour une inscription plus rapide. Complétez votre profil en ajoutant une photo et une bio pour construire la confiance avec d'autres échangeurs."
+      },
+      "editProfile": {
+        "question": "Comment modifier mon profil ?",
+        "answer": "Allez dans votre Dashboard et cliquez sur votre photo de profil ou nom d'utilisateur. De là, vous pouvez mettre à jour votre photo, bio, localisation et préférences. Garder votre profil à jour aide à construire la confiance avec les partenaires d'échange potentiels."
+      },
+      "delete": {
+        "question": "Comment supprimer mon compte ?",
+        "answer": "Allez dans Dashboard > Paramètres > Compte et faites défiler vers 'Supprimer le compte'. Notez que cette action est permanente et supprimera toutes vos annonces, historique d'échanges et avis. Complétez tous les échanges en cours avant la suppression."
+      },
+      "verification": {
+        "question": "Que signifient les badges de vérification ?",
+        "answer": "Les badges vérifiés indiquent qu'un utilisateur a confirmé son identité via notre processus de vérification. Cela inclut la vérification email, téléphone et optionnellement ID. Les utilisateurs vérifiés ont tendance à avoir plus d'échanges réussis."
+      },
+      "changePassword": {
+        "question": "Comment changer mon mot de passe ?",
+        "answer": "Allez dans Dashboard > Paramètres > Sécurité et cliquez 'Changer le mot de passe'. Vous devrez entrer votre mot de passe actuel et en choisir un nouveau. Nous recommandons d'utiliser un mot de passe fort et unique et d'activer l'authentification à deux facteurs."
+      },
+      "blockUser": {
+        "question": "Puis-je bloquer un autre utilisateur ?",
+        "answer": "Oui. Allez sur le profil de l'utilisateur et cliquez sur le menu à trois points, puis sélectionnez 'Bloquer l'utilisateur'. Les utilisateurs bloqués ne peuvent pas vous envoyer de messages ni voir vos annonces. Vous pouvez gérer les utilisateurs bloqués dans vos paramètres de compte."
+      }
+    },
+    "pricing": {
+      "free": {
+        "question": "Dois-je payer pour utiliser Swap ?",
+        "answer": "Non ! Swap est complètement gratuit pour les échanges de base. Vous pouvez lister des articles, parcourir, envoyer des messages aux autres utilisateurs et finaliser des échanges sans aucun frais. Les fonctionnalités Premium sont optionnelles et offrent une visibilité et un support améliorés."
+      },
+      "features": {
+        "question": "Que sont les fonctionnalités Premium ?",
+        "answer": "Premium inclut des annonces mises en avant dans les résultats de recherche, un support client prioritaire, des analyses avancées sur vos annonces, et un accès anticipé aux nouvelles fonctionnalités. Les abonnés Premium obtiennent aussi un badge spécial sur leur profil."
+      },
+      "cancel": {
+        "question": "Comment annuler mon abonnement Premium ?",
+        "answer": "Allez dans Dashboard > Paramètres > Abonnement et cliquez 'Annuler Premium'. Vos fonctionnalités premium resteront actives jusqu'à la fin de votre période de facturation actuelle. Vous pouvez vous réabonner à tout moment."
+      }
+    }
+  },
+  "safety": {
+    "title": "Conseils de sécurité",
+    "subtitle": "Apprenez à échanger en toute confiance et à vous protéger des problèmes potentiels",
+    "safetyMatters": "Votre sécurité compte",
+    "quickChecklist": "Checklist de sécurité rapide",
+    "howToSwap": {
+      "title": "Comment échanger en toute sécurité",
+      "description": "Suivez ces directives pour garantir des échanges fluides et sécurisés",
+      "tips": {
+        "reviewProfiles": {
+          "title": "Examinez les profils attentivement",
+          "description": "Vérifiez les notes, avis et statut de vérification des utilisateurs avant d'accepter un échange. Cherchez des utilisateurs établis avec un historique d'échanges réussis."
+        },
+        "communicateApp": {
+          "title": "Communiquez via l'application",
+          "description": "Gardez toutes les conversations sur notre plateforme. Cela crée un enregistrement et aide notre équipe support à vous assister si des problèmes surviennent."
+        },
+        "documentItems": {
+          "title": "Documentez vos articles",
+          "description": "Prenez des photos claires et bien éclairées montrant tous les angles et imperfections. Cela prévient les malentendus et litiges."
+        },
+        "honestCondition": {
+          "title": "Soyez honnête sur l'état",
+          "description": "Décrivez précisément l'état de votre article, y compris les défauts. La transparence construit la confiance et prévient les conflits."
+        },
+        "honestReviews": {
+          "title": "Laissez des avis honnêtes",
+          "description": "Après avoir complété un échange, laissez un avis équitable. Cela aide les autres utilisateurs et contribue à une communauté digne de confiance."
+        }
+      }
+    },
+    "meetingPerson": {
+      "title": "Rencontre en personne",
+      "description": "Meilleures pratiques pour les échanges en personne sécurisés",
+      "tips": {
+        "safeLocation": {
+          "title": "Choisissez un lieu sûr",
+          "description": "Rencontrez-vous dans des zones publiques, bien éclairées avec beaucoup de gens. Les cafés, centres commerciaux et 'zones d'échange sécurisées' des postes de police sont idéaux."
+        },
+        "daylightHours": {
+          "title": "Rencontrez-vous pendant la journée",
+          "description": "Planifiez les rencontres pendant la journée autant que possible. Si le soir est inévitable, choisissez un lieu bien éclairé et animé."
+        },
+        "bringFriend": {
+          "title": "Amenez un ami",
+          "description": "Envisagez d'amener quelqu'un avec vous, surtout pour les échanges de grande valeur. La sécurité est dans le nombre."
+        },
+        "shareLocation": {
+          "title": "Partagez votre localisation",
+          "description": "Informez un ami ou un membre de votre famille où vous allez et quand vous prévoyez de revenir. Partagez votre localisation en direct si possible."
+        },
+        "inspectBefore": {
+          "title": "Inspectez avant d'échanger",
+          "description": "Prenez le temps d'inspecter l'article à fond avant de compléter l'échange. Ne vous sentez pas pressé ou sous pression."
+        }
+      }
+    },
+    "reportingScams": {
+      "title": "Signaler les arnaques",
+      "description": "Que faire si vous rencontrez une activité suspecte",
+      "tips": {
+        "warningSigns": {
+          "title": "Identifiez les signaux d'alerte",
+          "description": "Méfiez-vous des utilisateurs pressants, de ceux qui refusent les rencontres en personne, demandent un paiement hors de l'application ou proposent des échanges qui semblent trop beaux pour être vrais."
+        },
+        "reportImmediately": {
+          "title": "Signalez immédiatement",
+          "description": "Utilisez le bouton 'Signaler' sur les profils ou messages si vous suspectez une activité frauduleuse. Notre équipe examine tous les signalements rapidement."
+        },
+        "documentEverything": {
+          "title": "Gardez des traces de vos transactions",
+          "description": "En cas de doute, enregistrez vos messages et faites des captures d'écran. Documenter les comportements inappropriés nous aide à maintenir une plateforme sûre pour tous les troqueurs."
+        },
+        "protectInfo": {
+          "title": "Protégez vos informations",
+          "description": "Ne partagez jamais d'informations personnelles sensibles comme votre adresse, détails financiers ou copies de documents d'identité avec d'autres utilisateurs."
+        }
+      }
+    },
+    "quickTips": {
+      "trustInstincts": "Faites confiance à votre instinct — si quelque chose semble bizarre, c'est probablement le cas",
+      "noMoneyFirst": "N'envoyez jamais d'argent ou d'articles avant de recevoir l'article de l'autre partie",
+      "verifyHighValue": "Vérifiez les articles de grande valeur avant d'échanger",
+      "trackedShipping": "Utilisez une livraison suivie pour tous les échanges postaux",
+      "reportSuspicious": "Signalez immédiatement tout comportement suspect"
+    },
+    "emergency": {
+      "title": "Situation d'urgence ?",
+      "description": "Si vous sentez que vous êtes en danger immédiat, contactez d'abord les services d'urgence locaux. Ensuite, signalez nous l'incident afin que nous puissions prendre les mesures appropriées sur la plateforme.",
+      "reportIncident": "Signaler un incident",
+      "haveMoreQuestions": "Vous avez d'autres questions ?",
+      "haveMoreQuestionsDesc": "Notre équipe support est disponible pour vous aider avec toutes vos préoccupations de sécurité",
+      "browseFaq": "Parcourir la FAQ",
+      "contactSupport": "Contacter le support"
+    }
+  },
+  "contact": {
+    "title": "Nous contacter",
+    "subtitle": "Notre équipe support est là pour vous aider",
+    "description": "Remplissez le formulaire ci-dessous et nous vous répondrons dans les plus brefs délais.",
+    "form": {
+      "name": "Nom",
+      "namePlaceholder": "Votre nom",
+      "email": "Email",
+      "emailPlaceholder": "votre@email.com",
+      "reason": "Raison du contact",
+      "reasonPlaceholder": "Sélectionnez une raison",
+      "subject": "Sujet",
+      "subjectPlaceholder": "Décrivez brièvement votre demande",
+      "message": "Message",
+      "messagePlaceholder": "Décrivez votre demande en détail...",
+      "submit": "Envoyer le message",
+      "submitting": "Envoi en cours..."
+    },
+    "reasons": {
+      "general": "Demande générale",
+      "technical": "Support technique",
+      "tradeDispute": "Litige d'échange",
+      "reportUser": "Signaler un utilisateur",
+      "billing": "Question de facturation",
+      "feedback": "Commentaires et suggestions",
+      "partnership": "Demande de partenariat",
+      "other": "Autre"
+    },
+    "responseTimes": {
+      "general": "24-48 heures",
+      "technical": "12-24 heures",
+      "tradeDispute": "6-12 heures",
+      "reportUser": "2-6 heures",
+      "billing": "24-48 heures",
+      "feedback": "48-72 heures",
+      "partnership": "48-72 heures",
+      "other": "24-48 heures"
+    },
+    "success": {
+      "title": "Message envoyé avec succès !",
+      "description": "Nous avons reçu votre message et vous répondrons dans les plus brefs délais.",
+      "reference": "Référence : #{{reference}}",
+      "expectedResponse": "Temps de réponse estimé : {{time}}",
+      "backToHome": "Retour à l'accueil",
+      "newMessage": "Envoyer un autre message"
+    },
+    "prioritySupport": {
+      "title": "Chat en direct",
+      "description": "Disponible pour les utilisateurs Premium",
+      "urgentDispute": "Litige d'échange urgent ?",
+      "urgentDisputeDesc": "Incluez l'ID de l'échange et les deux noms d'utilisateur pour une résolution plus rapide.",
+      "learnMore": "En savoir plus sur Premium"
+    },
+    "otherWays": {
+      "title": "Autres moyens de nous contacter",
+      "helpCenter": {
+        "title": "Vérifiez la FAQ d'abord",
+        "description": "De nombreuses questions fréquentes ont réponse dans notre centre d'aide.",
+        "browse": "Parcourir la FAQ"
+      },
+      "community": {
+        "title": "Rejoindre notre communauté",
+        "description": "Connectez-vous avec d'autres échangeurs et partagez vos expériences."
+      },
+      "emergency": {
+        "title": "Urgence ?",
+        "description": "Pour les questions urgentes de sécurité, veuillez utiliser notre formulaire de signalement."
+      }
+    },
+    "info": {
+      "officeHours": "Heures de bureau : Lun-Ven, 9h-17h HE",
+      "responseTime": "Temps de réponse moyen : 24 heures",
+      "languages": "Langues : Français, Anglais"
+    }
+  },
+  "trustSection": {
+    "title": "Échange Simple et Sécurisé",
+    "subtitle": "Notre plateforme de confiance rend l'échange peer-to-peer sûr et facile",
+    "step1": {
+      "title": "Déposer votre article",
+      "description": "Téléchargez des photos et des détails sur ce que vous voulez échanger"
+    },
+    "step2": {
+      "title": "Discuter et Proposer",
+      "description": "Connectez-vous avec des échangeurs et négociez l'échange parfait"
+    },
+    "step3": {
+      "title": "Expédier et Recevoir",
+      "description": "Expédiez votre article en toute sécurité et recevez ce que vous avez échangé"
+    }
+  }
+}

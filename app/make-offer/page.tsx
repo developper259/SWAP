@@ -12,6 +12,7 @@ import { Badge } from '@/components/ui/badge';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { ScrollArea } from '@/components/ui/scroll-area';
+import { useLanguage } from '@/lib/language-context';
 
 interface InventoryItem {
   id: string;
@@ -52,13 +53,14 @@ const TARGET_ITEM: TargetItem = {
   condition: 'Like New',
 };
 
-const STEPS = [
-  { id: 1, title: 'Select Items', description: 'Choose items to offer' },
-  { id: 2, title: 'Additional Info', description: 'Add a message' },
-  { id: 3, title: 'Confirm', description: 'Review and send offer' },
-];
-
 export default function MakeOfferPage() {
+  const { t } = useLanguage();
+
+  const STEPS = [
+    { id: 1, title: t('makeOfferPage.step1.title'), description: t('makeOfferPage.step1.description') },
+    { id: 2, title: t('makeOfferPage.step2.title'), description: t('makeOfferPage.step2.description') },
+    { id: 3, title: t('makeOfferPage.step3.title'), description: t('makeOfferPage.step3.description') },
+  ];
   const router = useRouter();
   const searchParams = useSearchParams();
   const targetItemId = searchParams.get('item') || 't1';
@@ -82,7 +84,7 @@ export default function MakeOfferPage() {
 
   const handleNext = () => {
     if (currentStep === 1 && selectedItems.length === 0) {
-      alert('Please select at least one item to continue');
+      alert(t('makeOfferPage.pleaseSelectItem'));
       return;
     }
     if (currentStep < 3) {
@@ -106,7 +108,7 @@ export default function MakeOfferPage() {
         message,
         receive: targetItemId,
       });
-      alert('Swap offer sent successfully!');
+      alert(t('makeOfferPage.offerSent'));
       router.push('/chat');
     }, 1000);
   };
@@ -133,7 +135,7 @@ export default function MakeOfferPage() {
 
             {/* Inventory Selection */}
             <div>
-              <h3 className="text-lg font-semibold text-foreground mb-4">Select items to offer</h3>
+              <h3 className="text-lg font-semibold text-foreground mb-4">{t('makeOfferPage.selectItemsToOffer')}</h3>
               <Card className="rounded-xl border-border">
                 <ScrollArea className="h-[400px]">
                   <div className="p-4 grid grid-cols-2 md:grid-cols-3 gap-3">
@@ -159,7 +161,7 @@ export default function MakeOfferPage() {
                           </div>
                           <p className="font-medium text-foreground text-sm truncate">{item.title}</p>
                           <div className="mt-1">
-                            <Badge variant="outline" className="text-xs">{item.condition}</Badge>
+                            <Badge variant="outline" className="text-xs">{t(`itemCard.condition.${item.condition.toLowerCase().replace(' ', '')}`)}</Badge>
                           </div>
                         </button>
                       );
@@ -169,7 +171,7 @@ export default function MakeOfferPage() {
                         <div className="w-10 h-10 bg-[#1A4D2E]/10 rounded-full flex items-center justify-center mb-2">
                           <Plus className="w-5 h-5 text-[#1A4D2E]" />
                         </div>
-                        <p className="text-sm text-[#1A4D2E] text-center">Add more items</p>
+                        <p className="text-sm text-[#1A4D2E] text-center">{t('makeOfferPage.addMoreItems')}</p>
                       </div>
                     </Link>
                   </div>
@@ -185,7 +187,7 @@ export default function MakeOfferPage() {
             {/* Selected Items Summary */}
             <Card className="rounded-xl border-border">
               <CardHeader>
-                <h3 className="text-lg font-semibold text-foreground">Your Offer Summary</h3>
+                <h3 className="text-lg font-semibold text-foreground">Résumé de votre offre</h3>
               </CardHeader>
               <CardContent className="space-y-3">
                 {selectedItemsData.map((item) => (
@@ -196,7 +198,7 @@ export default function MakeOfferPage() {
                     <div className="flex-1">
                       <p className="font-medium text-foreground">{item.title}</p>
                       <div className="mt-1">
-                        <Badge variant="outline" className="text-xs">{item.condition}</Badge>
+                        <Badge variant="outline" className="text-xs">{t(`itemCard.condition.${item.condition.toLowerCase().replace(' ', '')}`)}</Badge>
                       </div>
                     </div>
                     <Button
@@ -221,13 +223,13 @@ export default function MakeOfferPage() {
               <CardHeader>
                 <h3 className="text-lg font-semibold text-foreground flex items-center gap-2">
                   <MessageSquare className="w-5 h-5" />
-                  Message to Owner
+                  {t('makeOfferPage.messageToOwner')}
                 </h3>
-                <p className="text-sm text-muted-foreground">Add a friendly note to start the negotiation</p>
+                <p className="text-sm text-muted-foreground">{t('makeOfferPage.addFriendlyNote')}</p>
               </CardHeader>
               <CardContent>
                 <Textarea
-                  placeholder="Hi! I'm interested in trading for your item. Let me know if you're interested in my offer..."
+                  placeholder={t('makeOfferPage.messagePlaceholder')}
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
                   className="rounded-lg bg-secondary border-0 min-h-[120px] resize-none"
@@ -243,13 +245,13 @@ export default function MakeOfferPage() {
             {/* Trade Summary */}
             <Card className="rounded-xl border-[#1A4D2E]/20 bg-[#1A4D2E]/5">
               <CardHeader>
-                <h3 className="text-xl font-bold text-foreground">Trade Summary</h3>
+                <h3 className="text-xl font-bold text-foreground">{t('makeOfferPage.tradeSummary')}</h3>
               </CardHeader>
               <CardContent className="space-y-6">
                 {/* Exchange Visual */}
                 <div className="flex items-start justify-center gap-8">
                   <div className="text-left">
-                    <p className="text-sm text-muted-foreground mb-2">You Give</p>
+                    <p className="text-sm text-muted-foreground mb-2">{t('makeOfferPage.youGive')}</p>
                     <div className="space-y-2">
                       {selectedItemsData.map((item) => (
                         <div key={item.id} className="flex items-center gap-3">
@@ -264,12 +266,12 @@ export default function MakeOfferPage() {
                   
                   <div className="flex flex-col items-center justify-center mt-6">
                     <ArrowRight className="w-6 h-6 text-[#1A4D2E]" />
-                    <span className="text-xs text-[#1A4D2E] font-medium">FOR</span>
+                    <span className="text-xs text-[#1A4D2E] font-medium">{t('makeOfferPage.for')}</span>
                     <ArrowRight className="w-6 h-6 text-[#1A4D2E]" />
                   </div>
                   
                   <div className="text-left">
-                    <p className="text-sm text-muted-foreground mb-2">You Receive</p>
+                    <p className="text-sm text-muted-foreground mb-2">{t('makeOfferPage.youReceive')}</p>
                     <div className="flex items-start gap-3">
                       <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center text-2xl border border-border flex-shrink-0">
                         {TARGET_ITEM.image}
@@ -288,7 +290,7 @@ export default function MakeOfferPage() {
                 {/* Message Preview */}
                 {message && (
                   <div className="border-t border-border pt-4">
-                    <p className="text-sm font-medium text-foreground mb-2">Your Message:</p>
+                    <p className="text-sm font-medium text-foreground mb-2">{t('makeOfferPage.yourMessage')}:</p>
                     <p className="text-sm text-muted-foreground bg-secondary/30 p-3 rounded-lg">{message}</p>
                   </div>
                 )}
@@ -338,12 +340,12 @@ export default function MakeOfferPage() {
                 className="gap-2 rounded-lg text-foreground hover:bg-secondary"
               >
                 <ArrowLeft className="w-4 h-4" />
-                Back
+                {t('makeOfferPage.back')}
               </Button>
             </Link>
             <div>
-              <h1 className="text-xl font-bold text-foreground">Make a Swap Offer</h1>
-              <p className="text-sm text-muted-foreground">Create your exchange proposal</p>
+              <h1 className="text-xl font-bold text-foreground">{t('makeOfferPage.title')}</h1>
+              <p className="text-sm text-muted-foreground">{t('makeOfferPage.subtitle')}</p>
             </div>
           </div>
         </div>
@@ -397,7 +399,7 @@ export default function MakeOfferPage() {
       </div>
 
       {/* Navigation Footer */}
-      <div className="fixed bottom-0 left-0 right-0 bg-card border-t border-border shadow-lg z-50">
+      <div className="sticky bottom-0 left-0 right-0 bg-card border-t border-border shadow-lg z-50 mb-20">
         <div className="max-w-4xl mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <Button
@@ -407,7 +409,7 @@ export default function MakeOfferPage() {
               className="rounded-lg"
             >
               <ArrowLeft className="w-4 h-4 mr-2" />
-              Previous
+              {t('makeOfferPage.previous')}
             </Button>
 
             {currentStep === 3 ? (
@@ -418,10 +420,10 @@ export default function MakeOfferPage() {
                 style={{ backgroundColor: '#1A4D2E' }}
               >
                 {isSubmitting ? (
-                  <span className="animate-pulse">Sending...</span>
+                  <span className="animate-pulse">{t('makeOfferPage.sending')}</span>
                 ) : (
                   <>
-                    Send Swap Offer
+                    {t('makeOfferPage.sendSwapOffer')}
                     <ArrowRight className="w-4 h-4 ml-2" />
                   </>
                 )}
@@ -432,7 +434,7 @@ export default function MakeOfferPage() {
                 className="rounded-lg px-8"
                 style={{ backgroundColor: '#1A4D2E' }}
               >
-                Next
+                {t('makeOfferPage.next')}
                 <ArrowRight className="w-4 h-4 ml-2" />
               </Button>
             )}

@@ -2,6 +2,7 @@
 
 import { Search } from 'lucide-react';
 import { Input } from '@/components/ui/input';
+import { useLanguage } from '@/lib/language-context';
 
 interface Conversation {
   id: string;
@@ -28,7 +29,7 @@ const CONVERSATIONS: Conversation[] = [
     name: 'Mike Johnson',
     avatar: '👨‍💼',
     lastMessage: 'Can you send more photos?',
-    timestamp: '1 hour',
+    timestamp: '1 heure',
     unread: false,
     online: false,
   },
@@ -37,22 +38,23 @@ const CONVERSATIONS: Conversation[] = [
     name: 'Emma Wilson',
     avatar: '👩‍🎨',
     lastMessage: 'I approve the trade!',
-    timestamp: '3 hours',
+    timestamp: '3 heures',
     unread: false,
     online: true,
   },
 ];
 
 export default function ConversationList() {
+  const { t } = useLanguage();
   return (
     <div className="flex flex-col h-full bg-card border-r border-border">
       {/* Header */}
       <div className="p-4 border-b border-border">
-        <h2 className="text-lg font-bold text-foreground mb-3">Messages</h2>
+        <h2 className="text-lg font-bold text-foreground mb-3">{t('chat.messages')}</h2>
         <div className="relative">
           <Search className="absolute left-3 top-2.5 w-4 h-4 text-muted-foreground" />
           <Input
-            placeholder="Search conversations..."
+            placeholder={t('chat.searchConversations')}
             className="pl-9 pr-4 h-9 rounded-lg bg-secondary border-0 text-sm"
           />
         </div>
