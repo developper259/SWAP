@@ -296,29 +296,6 @@ export default function MakeOfferPage() {
                 )}
               </CardContent>
             </Card>
-
-            {/* Target Item Owner */}
-            <Card className="rounded-xl border-border">
-              <CardContent className="p-4">
-                <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 bg-secondary rounded-full flex items-center justify-center text-xl">
-                    {TARGET_ITEM.ownerAvatar}
-                  </div>
-                  <div className="flex-1">
-                    <p className="font-semibold text-foreground">{TARGET_ITEM.owner}</p>
-                    <div className="flex items-center gap-1 text-sm text-muted-foreground">
-                      <Star className="w-4 h-4 fill-amber-400 text-amber-400" />
-                      <span>{TARGET_ITEM.ownerRating}</span>
-                    </div>
-                  </div>
-                  <Link href={`/profile?id=owner`}>
-                    <Button variant="outline" size="sm" className="rounded-lg">
-                      <User className="w-4 h-4" />
-                    </Button>
-                  </Link>
-                </div>
-              </CardContent>
-            </Card>
           </div>
         );
 
@@ -399,7 +376,7 @@ export default function MakeOfferPage() {
       </div>
 
       {/* Navigation Footer */}
-      <div className="sticky bottom-0 left-0 right-0 bg-card border-t border-border shadow-lg z-50 mb-20">
+      <div className="w-full bg-card border-t border-border shadow-lg -mb-16">
         <div className="max-w-4xl mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <Button
